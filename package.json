@@ -1,0 +1,69 @@
+{
+  "name": "krainboltgreene-hsdk",
+  "version": "1.0.0",
+  "description": "An hsdk for accessing the resources on the L&W API",
+  "main": "transpiled/source/index.js",
+  "scripts": {
+    "prepublish": "npm run build",
+    "build": "rm -rf './transpiled/' && mkdir './transpiled/' && babel './source/**/index.js' -d './transpiled/'",
+    "test": "mocha --compilers js:babel-register './source/**/test.js'",
+    "start": "npm-run-all --parallel watch:build watch:test",
+    "lint": "eslint './source/'",
+    "watch": "npm-run-all --parallel watch:test watch:lint watch:build",
+    "watch:build": "chokidar './source/' --initial --command 'npm run build --silent'",
+    "watch:test": "chokidar './source/' --initial --command 'npm run test --silent'",
+    "watch:lint": "chokidar './source/' --initial --command 'npm run lint --silent'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/krainboltgreene/abstraction.js.git"
+  },
+  "keywords": [
+    "http",
+    "api",
+    "client",
+    "hsdk",
+    "hateoas"
+  ],
+  "author": "Kurtis Rainbolt-Greene <me@kurtisrainboltgreene.name>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/krainboltgreene/hsdk.js/issues"
+  },
+  "homepage": "https://github.com/krainboltgreene/hsdk.js#readme",
+  "devDependencies": {
+    "babel": "^6",
+    "babel-cli": "^6",
+    "babel-core": "^6",
+    "babel-eslint": "^6",
+    "babel-plugin-closure-elimination": "^1",
+    "babel-plugin-relative-import": "^1",
+    "babel-plugin-transform-object-rest-spread": "^6",
+    "babel-preset-latest": "^6",
+    "babelify": "^7",
+    "browserify": "^13",
+    "chai": "^3",
+    "chokidar-cli": "^1",
+    "eslint": "^3",
+    "eslint-plugin-babel": "^3",
+    "eslint-plugin-immutable": "^1",
+    "eslint-plugin-import": "^1",
+    "eslint-plugin-mocha": "^4",
+    "eslint-plugin-node": "^2",
+    "greenkeeper": "^3",
+    "http-server": "^0.9.0",
+    "mocha": "^2",
+    "moment": "^2",
+    "npm": "^3",
+    "npm-run-all": "^2",
+    "uglify-js": "^2"
+  },
+  "dependencies": {
+    "abstraction": "^8",
+    "fetch-ponyfill": "^2",
+    "ramda": "0.21.0",
+    "ramda-extra": "^1",
+    "recordType": "^1",
+    "url-template": "^2.0.8"
+  }
+}
