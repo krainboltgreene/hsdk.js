@@ -1,0 +1,25 @@
+{
+  "links": {
+    "self": "http://localhost:8080/v1/accounts",
+    "next": "http://localhost:8080/v1/accounts?page[offset]=2",
+    "last": "http://localhost:8080/v1/accounts?page[offset]=10"
+  },
+  "data": [
+    {
+      "type": "accounts",
+      "id": "1",
+      "attributes": {
+        "name": "Kurtis Rainbolt-Greene",
+        "age": 28,
+        "friends": [
+          "Jane",
+          "John",
+          "Angela"
+        ]
+      },
+      "links": {
+        "self": "http://localhost:8080/v1/accounts/1"
+      }
+    }
+  ]
+}
