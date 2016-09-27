@@ -2,7 +2,7 @@ import hsdk from "../transpiled/source"
 
 hsdk({
   protocol: "http",
-  host: "localhost:8080",
+  host: "hsdkjs.getsandbox.com",
   root: "v1/resources"
 })
   .then((client) => {
