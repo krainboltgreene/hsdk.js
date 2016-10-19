@@ -8,19 +8,19 @@ const SDK = hsdk({
 
 Promise.all([
   SDK
-    .then((client) => client().accounts().list())
+    .then((client) => client().v1Accounts().list())
     .then((response) => response.json())
     .then((value) => console.log({message: "List", value})),
 
   SDK
-    .then((client) => client().accounts().show({id: "1"}))
+    .then((client) => client().v1Accounts().show({id: "1"}))
     .then((response) => response.json())
     .then((value) => console.log({message: "Show", value})),
 
   SDK
     .then((client) => {
       return client
-        .accounts
+        .v1Accounts
         .update({
           id: "1",
           body: JSON.stringify({
