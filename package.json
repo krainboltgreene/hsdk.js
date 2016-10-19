@@ -1,5 +1,5 @@
 {
-  "name": "krainboltgreene-hsdk",
+  "name": "hsdk",
   "version": "1.0.0",
   "description": "An hsdk for accessing the resources on the L&W API",
   "main": "transpiled/source/index.js",
