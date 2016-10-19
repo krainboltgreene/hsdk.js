@@ -36,7 +36,6 @@
     "babel-cli": "^6",
     "babel-core": "^6",
     "babel-eslint": "^6",
-    "babel-plugin-closure-elimination": "^1",
     "babel-plugin-relative-import": "^1",
     "babel-plugin-transform-object-rest-spread": "^6",
     "babel-preset-latest": "^6",
