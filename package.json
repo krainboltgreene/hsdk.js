@@ -50,7 +50,7 @@
     "eslint-plugin-mocha": "^4",
     "eslint-plugin-node": "^2",
     "greenkeeper": "^3",
-    "http-server": "^0.9.0",
+    "http-server": "0.9.0",
     "mocha": "^2",
     "moment": "^2",
     "npm": "^3",
@@ -63,6 +63,6 @@
     "ramda": "0.21.0",
     "ramda-extra": "^1",
     "recordType": "^1",
-    "url-template": "^2.0.8"
+    "url-template": "^2"
   }
 }
