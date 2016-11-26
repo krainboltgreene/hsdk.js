@@ -59,7 +59,7 @@
   },
   "dependencies": {
     "abstraction": "^8",
-    "fetch-ponyfill": "^2",
+    "axios": "0.15.2",
     "ramda": "0.21.0",
     "ramda-extra": "^1",
     "recordType": "^1",
