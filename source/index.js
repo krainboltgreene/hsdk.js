@@ -22,4 +22,5 @@ export default function hsdk ({protocol, host, root}) {
     .then(groupBy(prop("namespace")))
     .then(map(indexBy(prop("intent"))))
     .then(map(map(prop("request"))))
+    .then((client) => (key) => client[key])
 }
