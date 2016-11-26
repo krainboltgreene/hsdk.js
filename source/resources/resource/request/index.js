@@ -25,7 +25,7 @@ export default function request ({method, href, mediatype}) {
       headers
     }
 
-    if (method === "POST" || method === "PATCH") {
+    if (method === "POST" || method === "PUT" || method === "PATCH") {
       return axois({
         url,
         ...properties,
