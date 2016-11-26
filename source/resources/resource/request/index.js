@@ -15,14 +15,14 @@ export default function request ({method, href, mediatype}) {
     const {authentication = {}} = configuration
     const {payload = null} = configuration
     const url = urlTemplate.parse(href).expand(omit(["authentication", "payload"], configuration))
-    const headers = {
-      "Content-Type": mediatype,
-      "Accept": mediatype,
-      ...authorization(authentication)
-    }
-    const data = {
+
+    const properties = {
       method,
-      headers
+      headers: {
+        "Content-Type": mediatype,
+        "Accept": mediatype,
+        ...authorization(authentication)
+      }
     }
 
     if (method === "POST" || method === "PUT" || method === "PATCH") {
