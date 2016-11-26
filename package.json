@@ -6,6 +6,7 @@
   "scripts": {
     "prepublish": "npm run build",
     "build": "rm -rf './transpiled/' && mkdir './transpiled/' && babel './source/**/index.js' -d './transpiled/'",
+    "example": "browserify --verbose --transform babelify --entry './example/client.js' --outfile './example/index.js'",
     "test": "mocha --compilers js:babel-register './source/**/test.js'",
     "start": "npm-run-all --parallel watch:build watch:test",
     "lint": "eslint './source/'",

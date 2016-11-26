@@ -1,12 +1,10 @@
-import fetchPolyfill from "fetch-ponyfill"
+import axois from "axios"
 import urlTemplate from "url-template"
 import {isNil} from "ramda"
 import {always} from "ramda"
 import {ifElse} from "ramda"
 import {omit} from "ramda"
 import {identity} from "ramda"
-
-const {fetch} = fetchPolyfill()
 
 const authorize = ({key, secret}) => ({Authorization: `Basic ${window.btoa(`${key}:${secret}`)}`})
 const authorization = ifElse(isNil, always({}), authorize)
@@ -28,9 +26,17 @@ export default function request ({method, href, mediatype}) {
     }
 
     if (method === "POST" || method === "PATCH") {
-      return fetch(url, {...data, body: body(payload)})
+      return axois({
+        url,
+        ...properties,
+        data: payload
+      })
     }
 
-    return fetch(url, data)
+    return axois({
+      url,
+      ...properties,
+      params: payload
+    })
   }
 }
