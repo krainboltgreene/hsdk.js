@@ -19,7 +19,7 @@ export default function hsdk ({protocol, host, root}) {
     .then(prop("data"))
     .then(resources)
     .then(prop("data"))
-    .then(groupBy(prop("group")))
-    .then(map(indexBy(prop("name"))))
+    .then(groupBy(prop("namespace")))
+    .then(map(indexBy(prop("intent"))))
     .then(map(map(prop("request"))))
 }

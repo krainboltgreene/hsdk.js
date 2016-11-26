@@ -9,9 +9,9 @@ export default abstract({
   source: hammer("attributes"),
   schema: {
     id: text,
-    name: text,
+    intent: text,
     group: text,
-    description: text,
+    namespace: text,
     verb: text,
     href: text,
     mediatype: text
