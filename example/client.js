@@ -1,39 +1,33 @@
 import hsdk from "../transpiled/source"
 
-const SDK = hsdk({
+const client = hsdk({
   protocol: "http",
   host: "hsdkjs.getsandbox.com",
   root: "v1/resources"
 })
 
-Promise.all([
-  SDK
-    .then((client) => client().v1Accounts().list())
-    .then((response) => response.json())
-    .then((value) => console.log({message: "List", value})),
+client
+  .then((sdk) => sdk("v1/accounts").list())
+  .then((response) => console.log({message: "List", payload: response.data}))
 
-  SDK
-    .then((client) => client().v1Accounts().show({id: "1"}))
-    .then((response) => response.json())
-    .then((value) => console.log({message: "Show", value})),
+client
+  .then((sdk) => sdk("v1/accounts").show({id: "1"}))
+  .then((response) => console.log({message: "Show", payload: response.data}))
 
-  SDK
-    .then((client) => {
-      return client
-        .v1Accounts
-        .update({
-          id: "1",
-          body: JSON.stringify({
-            data: {
-              id: "1",
-              type: "accounts",
-              attributes: {
-                age: 29
-              }
+client
+  .then((sdk) => {
+    return sdk("v1/accounts")
+      .update({
+        id: "1",
+        body: {
+          data: {
+            id: "1",
+            type: "accounts",
+            attributes: {
+              age: 29
             }
-          })
-        })
-    })
-    .then((response) => response.json())
-    .then((value) => console.log({message: "Update", value}))
-])
+          }
+        }
+      })
+  })
+  .then((response) => console.log({message: "Update", payload: response.data}))
