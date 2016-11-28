@@ -1,7 +1,7 @@
 {
   "name": "hsdk",
   "version": "1.0.5",
-  "description": "An hsdk for accessing the resources on the L&W API",
+  "description": "A hypermedia standard development kit for knowing about home api endpoints",
   "main": "transpiled/source/index.js",
   "scripts": {
     "prepublish": "npm run build",
