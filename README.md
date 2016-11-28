@@ -35,6 +35,16 @@ curl -X "GET" "http://hsdkjs.getsandbox.com/v1/resources" \
      -H "Accept-Encoding: gzip, identity"
 ```
 
+Each resource MUST have the following properties:
+
+  - intent: The human name for this result, example: `list`, `show`, `create`, `destroy`, `update`
+  - namespace: The groupings this resource is under, can be anything
+  - description: A short description for the resource
+  - method: The HTTP verb used
+  - href: A RFC 6570 URL template that the client can use directly
+  - mediatype: The preferred mediatype for this endpoint
+  - allowed (FUTURE): An allowed list of fields
+  - query (FUTURE): An allowed list of query parameter names
 
 That response will look like this:
 
@@ -119,17 +129,6 @@ Connection: close
   ]
 }
 ```
-
-Each resource MUST have the following properties:
-
-  - intent: The human name for this result, example: `list`, `show`, `create`, `destroy`, `update`
-  - namespace: The groupings this resource is under, can be anything
-  - description: A short description for the resource
-  - method: The HTTP verb used
-  - href: A RFC 6570 URL template that the client can use directly
-  - mediatype: The preferred mediatype for this endpoint
-  - allowed (FUTURE): An allowed list of fields
-  - query (FUTURE): An allowed list of query parameter names
 
 
 
