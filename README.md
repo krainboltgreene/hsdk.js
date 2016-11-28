@@ -23,16 +23,13 @@ hsdk({protocol: "http", host: "hsdkjs.getsandbox.com", root: "v1/resources"})
 
 Much like [json-home](https://mnot.github.io/I-D/json-home/), a fantastic spec by @mnot, jsonapi-home is an attempt to allow clients to build themselves.
 
-For this to work you need a server that responds to `GET` requests, specifically as defined by the `hsdk` client.
-
-Using the example above, we need a HTTP server running on `localhost:8080` that responds to `http` requests to `GET /v1/resources`.
+Using the example above, we need a HTTP server running on `hsdkjs.getsandbox.com` that responds to `http` requests to `GET /v1/resources`.
 
 Here is a sample CURL-based request (an example of what hsdk does under the hood):
 
 ``` bash
 curl -X "GET" "http://hsdkjs.getsandbox.com/v1/resources" \
-     -H "Accept: application/vnd.api+json" \
-     -H "Accept-Encoding: gzip, identity"
+     -H "Accept: application/vnd.api+json"
 ```
 
 Each resource MUST have the following properties:
@@ -50,15 +47,9 @@ That response will look like this:
 
 ``` http
 HTTP/1.1 200 OK
-Content-Type: application/json
-Access-Control-Allow-Credentials: true
-Access-Control-Allow-Headers: Content-Type
-Access-Control-Allow-Methods: GET,POST,PUT,DELETE,PATCH,OPTIONS
-Access-Control-Allow-Origin: *
-Transfer-Encoding: chunked
+Accept: application/vnd.api+json
+Content-Type: application/vnd.api+json
 Date: Mon, 28 Nov 2016 19:50:32 GMT
-Via: 1.1 google
-Connection: close
 
 {
   "links": {
@@ -80,7 +71,7 @@ Connection: close
           "filter": true,
           "sort": true
         },
-        "mediatype": "application/vnd.api+json; version=1"
+        "mediatype": "application/vnd.api+json"
       },
       "links": {
         "self": "http://hsdkjs.getsandbox.com/v1/resources/v1-accounts-list"
@@ -98,7 +89,7 @@ Connection: close
         "query": {
           "fields": true
         },
-        "mediatype": "application/vnd.api+json; version=1"
+        "mediatype": "application/vnd.api+json"
       },
       "links": {
         "self": "http://hsdkjs.getsandbox.com/v1/resources/v1-accounts-show"
@@ -120,7 +111,7 @@ Connection: close
             "age"
           ]
         ],
-        "mediatype": "application/vnd.api+json; version=1"
+        "mediatype": "application/vnd.api+json"
       },
       "links": {
         "self": "http://hsdkjs.getsandbox.com/v1/resources/v1-accounts-update"
@@ -129,7 +120,6 @@ Connection: close
   ]
 }
 ```
-
 
 
 [BADGE_TRAVIS]: https://img.shields.io/travis/krainboltgreene/hsdk.js.svg?maxAge=2592000&style=flat-square
