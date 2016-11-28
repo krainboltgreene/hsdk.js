@@ -1,6 +1,6 @@
 {
   "name": "hsdk",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "An hsdk for accessing the resources on the L&W API",
   "main": "transpiled/source/index.js",
   "scripts": {
