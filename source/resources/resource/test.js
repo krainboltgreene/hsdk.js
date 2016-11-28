@@ -14,6 +14,7 @@ describe("resource()", () => {
       mediatype: "application/json"
     }
   }
+
   it("has a request property", () => {
     expect(subject(data)).to.have.property("request")
   })

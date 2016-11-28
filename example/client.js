@@ -1,10 +1,6 @@
 import hsdk from "../transpiled/source"
 
-const client = hsdk({
-  protocol: "http",
-  host: "hsdkjs.getsandbox.com",
-  root: "v1/resources"
-})
+const client = hsdk({protocol: "http", host: "hsdkjs.getsandbox.com", root: "v1/resources"})
 
 client
   .then((sdk) => sdk("v1/accounts").list())
