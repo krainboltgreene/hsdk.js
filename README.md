@@ -14,7 +14,7 @@ hsdk stands for HATEOAS Software Development Kit. This library reads from a spec
 import hsdk from "hsdk"
 
 hsdk({protocol: "http", host: "hsdkjs.getsandbox.com", root: "v1/resources"})
-  .then((client) => client("v1Accounts").list())
+  .then((client) => client("v1/Accounts").list())
   .then((value) => console.log(value))
 ```
 
