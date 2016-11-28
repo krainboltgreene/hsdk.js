@@ -10,7 +10,6 @@ export default abstract({
   schema: {
     id: text,
     intent: text,
-    group: text,
     namespace: text,
     verb: text,
     href: text,
