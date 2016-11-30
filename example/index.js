@@ -7,11 +7,7 @@ var _source2 = _interopRequireDefault(_source);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var client = (0, _source2.default)({
-  protocol: "http",
-  host: "hsdkjs.getsandbox.com",
-  root: "v1/resources"
-});
+var client = (0, _source2.default)({ protocol: "http", host: "hsdkjs.getsandbox.com", root: "v1/resources" });
 
 client.then(function (sdk) {
   return sdk("v1/accounts").list();
@@ -42,7 +38,7 @@ client.then(function (sdk) {
   return console.log({ message: "Update", payload: response.data });
 });
 
-},{"../transpiled/source":56}],2:[function(require,module,exports){
+},{"../transpiled/source":61}],2:[function(require,module,exports){
 //  Ramda v0.22.1
 //  https://github.com/ramda/ramda
 //  (c) 2013-2016 Scott Sauyet, Michael Hurley, and David Chambers
@@ -9370,7 +9366,7 @@ function timestamp(value) {
 
   return (0, _moment2.default)(new Date(value));
 }
-},{"moment":45}],19:[function(require,module,exports){
+},{"moment":46}],19:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -9564,7 +9560,7 @@ module.exports = function xhrAdapter(config) {
 };
 
 }).call(this,require('_process'))
-},{"../core/createError":28,"./../core/settle":31,"./../helpers/btoa":35,"./../helpers/buildURL":36,"./../helpers/cookies":38,"./../helpers/isURLSameOrigin":40,"./../helpers/parseHeaders":42,"./../utils":44,"_process":46}],22:[function(require,module,exports){
+},{"../core/createError":28,"./../core/settle":31,"./../helpers/btoa":35,"./../helpers/buildURL":36,"./../helpers/cookies":38,"./../helpers/isURLSameOrigin":40,"./../helpers/parseHeaders":42,"./../utils":44,"_process":47}],22:[function(require,module,exports){
 'use strict';
 
 var utils = require('./utils');
@@ -10105,7 +10101,7 @@ module.exports = {
 };
 
 }).call(this,require('_process'))
-},{"./adapters/http":21,"./adapters/xhr":21,"./helpers/normalizeHeaderName":41,"./utils":44,"_process":46}],34:[function(require,module,exports){
+},{"./adapters/http":21,"./adapters/xhr":21,"./helpers/normalizeHeaderName":41,"./utils":44,"_process":47}],34:[function(require,module,exports){
 'use strict';
 
 module.exports = function bind(fn, thisArg) {
@@ -10765,6 +10761,174 @@ module.exports = {
 };
 
 },{"./helpers/bind":34}],45:[function(require,module,exports){
+exports.continue                         = exports.continue                             = 100
+exports.switchProtocols                  = exports.switch_protocols                     = 101
+exports.processing                       = exports.processing                           = 102
+
+exports.ok                               = exports.ok                                   = 200
+exports.created                          = exports.created                              = 201
+exports.accepted                         = exports.accepted                             = 202
+exports.nonAuthoritative                 = exports.non_authoritative                    = 203
+exports.noContent                        = exports.no_content                           = 204
+exports.resetContent                     = exports.reset_content                        = 205
+exports.partialContent                   = exports.partial_content                      = 206
+exports.multiStatus                      = exports.multi_status                         = 207
+exports.alreadyReported                  = exports.already_reported                     = 208
+exports.imUsed                           = exports.im_used                              = 226
+
+exports.multipleChoices                  = exports.multiple_choices                     = 300
+exports.movedPermanently                 = exports.moved_permanently                    = 301
+exports.found                            = exports.found                                = 302
+exports.seeOther                         = exports.see_other                            = 303
+exports.notModified                      = exports.not_modified                         = 304
+exports.useProxy                         = exports.use_proxy                            = 305
+exports.switchProxy                      = exports.switch_proxy                         = 306
+exports.temporaryRedirect                = exports.temporary_redirect                   = 307
+exports.permanentRedirect                = exports.permanent_redirect                   = 308
+
+exports.badRequest                       = exports.bad_request                          = 400
+exports.unauthorized                     = exports.unauthorized                         = 401
+exports.paymentRequired                  = exports.payment_required                     = 402
+exports.forbidden                        = exports.forbidden                            = 403
+exports.notFound                         = exports.not_found                            = 404
+exports.methodNotAllowed                 = exports.method_not_allowed                   = 405
+exports.notAcceptable                    = exports.not_acceptable                       = 406
+exports.proxyAuthenticationRequired      = exports.proxy_authentication_required        = 407
+exports.requestTimeout                   = exports.request_timeout                      = 408
+exports.conflict                         = exports.conflict                             = 409
+exports.gone                             = exports.gone                                 = 410
+exports.lengthRequired                   = exports.length_required                      = 411
+exports.preconditionFailed               = exports.precondition_failed                  = 412
+exports.requestEntityTooLarge            = exports.request_entity_too_large             = 413
+exports.requestUriTooLong                = exports.request_uri_too_long                 = 414
+exports.unsupportedMediaType             = exports.unsupported_media_type               = 415
+exports.requestedRangeNotSatisfiable     = exports.requested_range_not_satisfiable      = 416
+exports.expectationFailed                = exports.expectation_failed                   = 417
+exports.imATeapot                        = exports.im_a_teapot                          = 418
+exports.authenticationTimeout            = exports.authentication_timeout               = 419
+exports.methodFailure                    = exports.method_failure                       = 420
+exports.enhanceYourCalm                  = exports.enhance_your_calm                    = 420
+exports.unprocessableEntity              = exports.unprocessable_entity                 = 422
+exports.locked                           = exports.locked                               = 423
+exports.failedDependency                 = exports.failed_dependency                    = 424
+exports.unorderedCollection              = exports.unordered_collection                 = 425
+exports.upgradeRequired                  = exports.upgrade_required                     = 426
+exports.preconditionRequired             = exports.precondition_required                = 428
+exports.tooManyRequests                  = exports.too_many_requests                    = 429
+exports.requestHeaderFieldsTooLarge      = exports.request_header_fields_too_large      = 431
+exports.loginTimeout                     = exports.login_timeout                        = 440
+exports.noResponse                       = exports.no_response                          = 444
+exports.retryWith                        = exports.retry_with                           = 449
+exports.blockedByWindowsParentalControls = exports.blocked_by_windows_parental_controls = 450
+exports.unavailableForLegalReasons       = exports.unavailable_for_legal_reasons        = 451
+exports.requestHeaderTooLarge            = exports.request_header_too_large             = 494
+exports.certError                        = exports.cert_error                           = 495
+exports.noCert                           = exports.no_cert                              = 496
+exports.httpToHttps                      = exports.http_to_https                        = 497
+exports.clientClosedRequest              = exports.client_closed_request                = 499
+
+exports.internalServerError              = exports.internal_server_error                = 500
+exports.notImplemented                   = exports.not_implemented                      = 501
+exports.badGateway                       = exports.bad_gateway                          = 502
+exports.serviceUnavailable               = exports.service_unavailable                  = 503
+exports.gatewayTimeout                   = exports.gateway_timeout                      = 504
+exports.httpVersionNotSupported          = exports.http_version_not_supported           = 505
+exports.variantAlsoNegotiates            = exports.variant_also_negotiates              = 506
+exports.insufficientStorage              = exports.insufficient_storage                 = 507
+exports.loopDetected                     = exports.loop_detected                        = 508
+exports.bandwidthLimitExceeded           = exports.bandwidth_limit_exceeded             = 509
+exports.notExtended                      = exports.not_extended                         = 510
+exports.networkAuthenticationRequired    = exports.network_authentication_required      = 511
+exports.originError                      = exports.origin_error                         = 520
+exports.webServerIsDown                  = exports.web_server_is_down                   = 521
+exports.connectionTimedOut               = exports.connection_timed_out                 = 522
+exports.proxyDeclinedRequest             = exports.proxy_declined_request               = 523
+exports.aTimeoutOccurred                 = exports.a_timeout_occurred                   = 524
+exports.networkReadTimeoutError          = exports.network_read_timeout_error           = 598
+exports.networkConnectTimeoutError       = exports.network_connect_timeout_error        = 599
+
+exports[100] = 'Continue'
+exports[101] = 'Switch Protocols'
+exports[102] = 'Processing'
+exports[200] = 'OK'
+exports[201] = 'Created'
+exports[202] = 'Accepted'
+exports[203] = 'Non-Authoritative Information'
+exports[204] = 'No Content'
+exports[205] = 'Reset Content'
+exports[206] = 'Partial Content'
+exports[207] = 'Multi-Status'
+exports[208] = 'Already Reported'
+exports[226] = 'IM Used'
+exports[300] = 'Multiple Choices'
+exports[301] = 'Moved Permanently'
+exports[302] = 'Found'
+exports[303] = 'Se Other'
+exports[304] = 'Not Modified'
+exports[305] = 'Use Proxy'
+exports[306] = 'Switch Proxy'
+exports[307] = 'Temporary Redirect'
+exports[308] = 'Permanent Redirect'
+exports[400] = 'Bad Request'
+exports[401] = 'Unauthorized'
+exports[402] = 'Payment Required'
+exports[403] = 'Forbidden'
+exports[404] = 'Not Found'
+exports[405] = 'Method Not Allowed'
+exports[406] = 'Not Acceptable'
+exports[407] = 'Proxy Authentication Required'
+exports[408] = 'Request Timeout'
+exports[409] = 'Conflict'
+exports[410] = 'Gone'
+exports[411] = 'Length Required'
+exports[412] = 'Precondition Failed'
+exports[413] = 'Request Entity Too Large'
+exports[414] = 'Request-URI Too Long'
+exports[415] = 'Unsupported Media Type'
+exports[416] = 'Requested Range Not Satisfiable'
+exports[417] = 'Expectation Failed'
+exports[418] = "I'm a teapot"
+exports[419] = 'Authentication Timeout'
+exports[422] = 'Unprocessable Entity'
+exports[423] = 'Locked'
+exports[424] = 'Failed Dependency'
+exports[425] = 'Unordered Collection'
+exports[426] = 'Upgrade Required'
+exports[428] = 'Precondition Required'
+exports[429] = 'Too Many Requests'
+exports[431] = 'Request Header Fields Too Large'
+exports[440] = 'Login Timeout'
+exports[444] = 'No Response'
+exports[449] = 'Retry With'
+exports[450] = 'Blocked by Windows Parental Controls'
+exports[451] = 'Unavailable for Legal Reasons'
+exports[494] = 'Request Header Too Large'
+exports[495] = 'Cert Error'
+exports[496] = 'No Cert'
+exports[497] = 'HTTP to HTTPS'
+exports[499] = 'Client Closed Request'
+exports[500] = 'Internal Server Error'
+exports[501] = 'Not Implemented'
+exports[502] = 'Bad Gateway'
+exports[503] = 'Service Unavailable'
+exports[504] = 'Gateway Timeout'
+exports[505] = 'HTTP Version Not Supported'
+exports[506] = 'Variant Also Negotiates'
+exports[507] = 'Insufficient Storate'
+exports[508] = 'Loop Detected'
+exports[509] = 'Bandwidth Limit Exceeded'
+exports[510] = 'Not Extended'
+exports[511] = 'Network Authentication Required'
+exports[520] = 'Origin Error'
+exports[521] = 'Web Server is Down'
+exports[522] = 'Connection Timed Out'
+exports[523] = 'Proxy Declined Request'
+exports[524] = 'A Timeout Occurred'
+exports[598] = 'Network Read Timeout Error'
+exports[599] = 'Network Connect Timeout Error'
+
+
+},{}],46:[function(require,module,exports){
 //! moment.js
 //! version : 2.17.0
 //! authors : Tim Wood, Iskren Chernev, Moment.js contributors
@@ -15067,7 +15231,7 @@ return hooks;
 
 })));
 
-},{}],46:[function(require,module,exports){
+},{}],47:[function(require,module,exports){
 // shim for using process in browser
 var process = module.exports = {};
 
@@ -15249,9 +15413,22 @@ process.chdir = function (dir) {
 };
 process.umask = function() { return 0; };
 
-},{}],47:[function(require,module,exports){
+},{}],48:[function(require,module,exports){
 arguments[4][2][0].apply(exports,arguments)
-},{"dup":2}],48:[function(require,module,exports){
+},{"dup":2}],49:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = aside;
+
+var _ramda = require("ramda");
+
+function aside() {
+  return (0, _ramda.tap)(_ramda.pipe.apply(undefined, arguments));
+}
+},{"ramda":48}],50:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -15275,7 +15452,7 @@ exports.default = (0, _ramda.curryN)(ARGUMENTS, function computedProp(computer, 
 
   return (0, _ramda.merge)(structure, (0, _ramda.objOf)(keyOrPath, computer(structure)));
 });
-},{"../nestedObjOf":53,"ramda":47}],49:[function(require,module,exports){
+},{"../nestedObjOf":57,"ramda":48}],51:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -15298,11 +15475,20 @@ exports.default = (0, _ramda.curryN)(2, function hammer(key, pairs) {
 
   return (0, _ramda.merge)(withoutKey, onlyKey);
 });
-},{"ramda":47}],50:[function(require,module,exports){
+},{"ramda":48}],52:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
+});
+
+var _aside = require("./aside");
+
+Object.defineProperty(exports, "aside", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_aside).default;
+  }
 });
 
 var _mapKeys = require("./mapKeys");
@@ -15350,8 +15536,52 @@ Object.defineProperty(exports, "nestedObjOf", {
   }
 });
 
+var _isPresent = require("./isPresent");
+
+Object.defineProperty(exports, "isPresent", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_isPresent).default;
+  }
+});
+
+var _isPopulated = require("./isPopulated");
+
+Object.defineProperty(exports, "isPopulated", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_isPopulated).default;
+  }
+});
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-},{"./computedProp":48,"./hammer":49,"./mapKeys":51,"./mergeDeep":52,"./nestedObjOf":53}],51:[function(require,module,exports){
+},{"./aside":49,"./computedProp":50,"./hammer":51,"./isPopulated":53,"./isPresent":54,"./mapKeys":55,"./mergeDeep":56,"./nestedObjOf":57}],53:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = isPopulated;
+
+var _ramda = require("ramda");
+
+function isPopulated(list) {
+  return !(0, _ramda.isEmpty)(list);
+}
+},{"ramda":48}],54:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = isPresent;
+
+var _ramda = require("ramda");
+
+function isPresent(value) {
+  return !(0, _ramda.isNil)(value);
+}
+},{"ramda":48}],55:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -15360,7 +15590,9 @@ Object.defineProperty(exports, "__esModule", {
 
 var _ramda = require("ramda");
 
-exports.default = (0, _ramda.curryN)(2, function mapKeys(ƒunction, pairs) {
+var ARGUMENTS = 2;
+
+exports.default = (0, _ramda.curryN)(ARGUMENTS, function mapKeys(ƒunction, pairs) {
   if ((0, _ramda.type)(ƒunction) !== "Function") {
     throw new Error("mapKeys only works with an Function, but the first argument was a " + (0, _ramda.type)(ƒunction));
   }
@@ -15371,17 +15603,18 @@ exports.default = (0, _ramda.curryN)(2, function mapKeys(ƒunction, pairs) {
 
   return (0, _ramda.fromPairs)((0, _ramda.map)((0, _ramda.adjust)(ƒunction, 0), (0, _ramda.toPairs)(pairs)));
 });
-},{"ramda":47}],52:[function(require,module,exports){
+},{"ramda":48}],56:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = mergeDeep;
 
 var _ramda = require("ramda");
 
-function mergeDeep(left, right) {
+var ARGUMENTS = 2;
+
+exports.default = (0, _ramda.curryN)(ARGUMENTS, function mergeDeep(left, right) {
   if ((0, _ramda.type)(left) !== (0, _ramda.type)(right)) {
     return right;
   }
@@ -15395,8 +15628,8 @@ function mergeDeep(left, right) {
   }
 
   return right;
-}
-},{"ramda":47}],53:[function(require,module,exports){
+});
+},{"ramda":48}],57:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -15405,10 +15638,12 @@ Object.defineProperty(exports, "__esModule", {
 
 var _ramda = require("ramda");
 
-exports.default = (0, _ramda.curryN)(2, function nestedObjOf(path, value) {
+var ARGUMENTS = 2;
+
+exports.default = (0, _ramda.curryN)(ARGUMENTS, function nestedObjOf(path, value) {
   return (0, _ramda.reduce)((0, _ramda.flip)(_ramda.objOf), value, (0, _ramda.reverse)(path));
 });
-},{"ramda":47}],54:[function(require,module,exports){
+},{"ramda":48}],58:[function(require,module,exports){
 //  Ramda v0.21.0
 //  https://github.com/ramda/ramda
 //  (c) 2013-2016 Scott Sauyet, Michael Hurley, and David Chambers
@@ -24194,7 +24429,7 @@ exports.default = (0, _ramda.curryN)(2, function nestedObjOf(path, value) {
 
 }.call(this));
 
-},{}],55:[function(require,module,exports){
+},{}],59:[function(require,module,exports){
 (function (root, factory) {
     if (typeof exports === 'object') {
         module.exports = factory();
@@ -24388,7 +24623,29 @@ exports.default = (0, _ramda.curryN)(2, function nestedObjOf(path, value) {
   return new UrlTemplate();
 }));
 
-},{}],56:[function(require,module,exports){
+},{}],60:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = handleResponse;
+
+var _httpstatuses = require("httpstatuses");
+
+function handleResponse(_ref) {
+  var status = _ref.status,
+      statusText = _ref.statusText,
+      data = _ref.data;
+
+  if (status === _httpstatuses.ok) {
+    return data;
+  }
+
+  throw new Error("hsdk couldn't access the home location, we received the response " + status + " " + statusText);
+}
+
+},{"httpstatuses":45}],61:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -24402,9 +24659,17 @@ var _axios2 = _interopRequireDefault(_axios);
 
 var _ramda = require("ramda");
 
-var _resources = require("./resources");
+var _wrapResources = require("./wrapResources");
 
-var _resources2 = _interopRequireDefault(_resources);
+var _wrapResources2 = _interopRequireDefault(_wrapResources);
+
+var _handleResponse = require("./handleResponse");
+
+var _handleResponse2 = _interopRequireDefault(_handleResponse);
+
+var _treeify = require("./treeify");
+
+var _treeify2 = _interopRequireDefault(_treeify);
 
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : { default: obj };
@@ -24415,31 +24680,50 @@ function hsdk(_ref) {
       host = _ref.host,
       root = _ref.root;
 
-  var provider = protocol + "://" + host;
-
   return (0, _axios2.default)({
-    url: provider + "/" + root,
+    url: protocol + "://" + host + "/" + root,
     headers: {
       Accept: "application/vnd.api+json"
     },
     responseType: "json"
-  }).then((0, _ramda.prop)("data")).then(_resources2.default).then((0, _ramda.prop)("data")).then((0, _ramda.groupBy)((0, _ramda.prop)("namespace"))).then((0, _ramda.map)((0, _ramda.indexBy)((0, _ramda.prop)("intent")))).then((0, _ramda.map)((0, _ramda.map)((0, _ramda.prop)("request")))).then(function (client) {
+  }).then(_handleResponse2.default).then(_wrapResources2.default).then(_treeify2.default).then(function (client) {
     return function (key) {
       return client[key];
     };
-  }).catch(console.error.bind(console));
+  });
 }
 
-},{"./resources":57,"axios":20,"ramda":54}],57:[function(require,module,exports){
+},{"./handleResponse":60,"./treeify":62,"./wrapResources":63,"axios":20,"ramda":58}],62:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.default = treeify;
 
 var _ramda = require("ramda");
 
-var _abstraction = require("abstraction");
+var groupByNamespace = (0, _ramda.groupBy)((0, _ramda.prop)("namespace"));
+var indexByIntent = (0, _ramda.indexBy)((0, _ramda.prop)("intent"));
+var mapToRequest = (0, _ramda.map)((0, _ramda.prop)("request"));
+var mapToIntentIndex = (0, _ramda.map)(indexByIntent);
+var nestedMapToRequest = (0, _ramda.map)(mapToRequest);
+
+function treeify(responses) {
+  return nestedMapToRequest(mapToIntentIndex(groupByNamespace(responses)));
+}
+
+},{"ramda":58}],63:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = wrapResources;
+
+var _ramda = require("ramda");
+
+var _ramdaExtra = require("ramda-extra");
 
 var _resource = require("./resource");
 
@@ -24449,14 +24733,17 @@ function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : { default: obj };
 }
 
-exports.default = (0, _abstraction.abstract)({
-  name: "resources",
-  schema: {
-    data: (0, _ramda.map)(_resource2.default)
-  }
-});
+function wrapResources(_ref) {
+  var data = _ref.data;
 
-},{"./resource":58,"abstraction":6,"ramda":54}],58:[function(require,module,exports){
+  if (data && (0, _ramdaExtra.isPopulated)(data)) {
+    return (0, _ramda.map)(_resource2.default, data);
+  }
+
+  throw new Error("hsdk recieved an invalid response payload, check the home network request");
+}
+
+},{"./resource":64,"ramda":58,"ramda-extra":52}],64:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -24464,6 +24751,8 @@ Object.defineProperty(exports, "__esModule", {
 });
 
 var _abstraction = require("abstraction");
+
+var _ramda = require("ramda");
 
 var _ramdaExtra = require("ramda-extra");
 
@@ -24481,7 +24770,6 @@ exports.default = (0, _abstraction.abstract)({
   schema: {
     id: _abstraction.text,
     intent: _abstraction.text,
-    group: _abstraction.text,
     namespace: _abstraction.text,
     verb: _abstraction.text,
     href: _abstraction.text,
@@ -24489,10 +24777,18 @@ exports.default = (0, _abstraction.abstract)({
   },
   virtuals: {
     request: _request2.default
+  },
+  validations: {
+    idPresent: (0, _ramda.propSatisfies)(_ramdaExtra.isPresent, "id"),
+    intentPresent: (0, _ramda.propSatisfies)(_ramdaExtra.isPresent, "intent"),
+    namespacePresent: (0, _ramda.propSatisfies)(_ramdaExtra.isPresent, "namespace"),
+    verbPresent: (0, _ramda.propSatisfies)(_ramdaExtra.isPresent, "verb"),
+    hrefPresent: (0, _ramda.propSatisfies)(_ramdaExtra.isPresent, "href"),
+    mediatypePresent: (0, _ramda.propSatisfies)(_ramdaExtra.isPresent, "mediatype")
   }
 });
 
-},{"./request":59,"abstraction":6,"ramda-extra":50}],59:[function(require,module,exports){
+},{"./request":65,"abstraction":6,"ramda":58,"ramda-extra":52}],65:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -24570,4 +24866,4 @@ function request(_ref2) {
   };
 }
 
-},{"axios":20,"ramda":54,"url-template":55}]},{},[1]);
+},{"axios":20,"ramda":58,"url-template":59}]},{},[1]);
