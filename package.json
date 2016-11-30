@@ -58,6 +58,7 @@
   "dependencies": {
     "abstraction": "^8",
     "axios": "0.15.2",
+    "httpstatuses": "^3",
     "ramda": "0.21.0",
     "ramda-extra": "^1",
     "recordType": "^1",
