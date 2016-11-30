@@ -8,6 +8,9 @@ hsdk stands for HATEOAS Software Development Kit. This library reads from a spec
 ![Dependencies][BADGE_DEPENDENCY]
 
 
+Example at play: https://esnextb.in/?gist=1ddc4e3e62196c8b9542b87a6141dff4
+
+
 ## using
 
 ``` javascript
