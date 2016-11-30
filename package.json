@@ -56,7 +56,7 @@
     "npm-run-all": "^3"
   },
   "dependencies": {
-    "abstraction": "^8",
+    "abstraction": "^9.0.1",
     "axios": "0.15.2",
     "httpstatuses": "^3",
     "ramda": "0.21.0",
