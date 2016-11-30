@@ -1,5 +1,4 @@
 import axios from "axios"
-import {tap} from "ramda"
 
 import wrapResources from "./wrapResources"
 import handleResponse from "./handleResponse"
