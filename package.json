@@ -33,7 +33,6 @@
   },
   "homepage": "https://github.com/krainboltgreene/hsdk.js#readme",
   "devDependencies": {
-    "babel": "^6",
     "babel-cli": "^6",
     "babel-core": "^6",
     "babel-eslint": "^7",
@@ -53,10 +52,8 @@
     "greenkeeper": "^4",
     "http-server": "0.9.0",
     "mocha": "^2",
-    "moment": "^2",
     "npm": "^3",
-    "npm-run-all": "^3",
-    "uglify-js": "^2"
+    "npm-run-all": "^3"
   },
   "dependencies": {
     "abstraction": "^8",
