@@ -8,9 +8,8 @@ const groupByVersion = groupBy(prop("version"))
 const groupedByVersion = map(groupByVersion)
 const indexByIntent = indexBy(prop("intent"))
 const indexedByIntent = map(map(indexByIntent))
-const asRequest = map(prop("request"))
-const asRequests = map(map(map(asRequest)))
+const asRequest = map(map(map(prop("request"))))
 
 export default function treeify (responses) {
-  return asRequests(indexedByIntent(groupedByVersion(groupByNamespace(responses))))
+  return asRequest(indexedByIntent(groupedByVersion(groupByNamespace(responses))))
 }

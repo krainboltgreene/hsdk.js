@@ -33,19 +33,19 @@ describe("treeify()", () => {
     ]
 
     it("has a show property for v1/accounts", () => {
-      expect(treeify(raw)).to.have.deep.property("accounts.v1.show")
+      expect(treeify(raw)).to.have.deep.property("accounts.v1.show").that.is.instanceOf(Function)
     })
 
     it("has a list property for v1/accounts", () => {
-      expect(treeify(raw)).to.have.deep.property("accounts.v1.list")
+      expect(treeify(raw)).to.have.deep.property("accounts.v1.list").that.is.instanceOf(Function)
     })
 
     it("has a show property for v2/accounts", () => {
-      expect(treeify(raw)).to.have.deep.property("accounts.v2.show")
+      expect(treeify(raw)).to.have.deep.property("accounts.v2.show").that.is.instanceOf(Function)
     })
 
     it("has a show property for v1/sessions", () => {
-      expect(treeify(raw)).to.have.deep.property("sessions.v2.create")
+      expect(treeify(raw)).to.have.deep.property("sessions.v2.create").that.is.instanceOf(Function)
     })
   })
 })
