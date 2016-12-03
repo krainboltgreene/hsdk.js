@@ -57,9 +57,9 @@ Date: Mon, 28 Nov 2016 19:50:32 GMT
 
 {
   "links": {
-    "self": "http://hsdkjs.getsandbox.com/v1/resources",
-    "next": "http://hsdkjs.getsandbox.com/v1/resources?page[offset]=2",
-    "last": "http://hsdkjs.getsandbox.com/v1/resources?page[offset]=10"
+    "self": "https://hsdkjs.getsandbox.com/v1/resources",
+    "next": "https://hsdkjs.getsandbox.com/v1/resources?page[offset]=2",
+    "last": "https://hsdkjs.getsandbox.com/v1/resources?page[offset]=10"
   },
   "data": [
     {
@@ -71,7 +71,7 @@ Date: Mon, 28 Nov 2016 19:50:32 GMT
         "version": "v1",
         "description": "List accounts.",
         "method": "GET",
-        "href": "http://hsdkjs.getsandbox.com/v1/accounts",
+        "href": "https://hsdkjs.getsandbox.com/v1/accounts",
         "query": {
           "filter": true,
           "sort": true
@@ -79,7 +79,7 @@ Date: Mon, 28 Nov 2016 19:50:32 GMT
         "mediatype": "application/vnd.api+json"
       },
       "links": {
-        "self": "http://hsdkjs.getsandbox.com/v1/resources/accounts-v1-list"
+        "self": "https://hsdkjs.getsandbox.com/v1/resources/accounts-v1-list"
       }
     },
     {
@@ -91,14 +91,14 @@ Date: Mon, 28 Nov 2016 19:50:32 GMT
         "version": "v1",
         "description": "Show an individual account.",
         "method": "GET",
-        "href": "http://hsdkjs.getsandbox.com/v1/accounts/{id}",
+        "href": "https://hsdkjs.getsandbox.com/v1/accounts/{id}",
         "query": {
           "fields": true
         },
         "mediatype": "application/vnd.api+json"
       },
       "links": {
-        "self": "http://hsdkjs.getsandbox.com/v1/resources/accounts-v1-show"
+        "self": "https://hsdkjs.getsandbox.com/v1/resources/accounts-v1-show"
       }
     },
     {
@@ -110,7 +110,7 @@ Date: Mon, 28 Nov 2016 19:50:32 GMT
         "version": "v1",
         "description": "Update an individual account.",
         "method": "PATCH",
-        "href": "http://hsdkjs.getsandbox.com/v1/accounts/{id}",
+        "href": "https://hsdkjs.getsandbox.com/v1/accounts/{id}",
         "allowed": [
           [
             "data",
@@ -121,7 +121,7 @@ Date: Mon, 28 Nov 2016 19:50:32 GMT
         "mediatype": "application/vnd.api+json"
       },
       "links": {
-        "self": "http://hsdkjs.getsandbox.com/v1/resources/accounts-v1-update"
+        "self": "https://hsdkjs.getsandbox.com/v1/resources/accounts-v1-update"
       }
     }
   ]
