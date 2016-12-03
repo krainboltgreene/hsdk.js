@@ -13,13 +13,59 @@ Example at play: https://esnextb.in/?gist=1ddc4e3e62196c8b9542b87a6141dff4
 
 ## using
 
+First you need to define your core sdk:
+
 ``` javascript
 import hsdk from "hsdk"
 
-hsdk({home: "http://hsdkjs.getsandbox.com/v1/resources"})
-  .then((client) => client.accounts.v1.list())
-  .then((value) => console.log(value))
+const sdk = hsdk({home: "https://hsdkjs.getsandbox.com/v1/resources"})
 ```
+
+`sdk` above is a `Promise` based on a request/response to/from the home resource.
+
+Now we can start making requests to our api, discovered 🌟magically🌟:
+
+``` javascript
+sdk
+  .then((client) => client.accounts.v1.list())
+  .then((response) => console.log({message: "List", payload: response.data}))
+```
+
+That will `log` a list of accounts.
+
+``` javascript
+sdk
+  .then((client) => client.accounts.v1.show({id: "1"}))
+  .then((response) => console.log({message: "Show", payload: response.data}))
+```
+
+This will `log` a single account, with the `id` of `1`
+
+``` javascript
+sdk
+  .then((client) => {
+    return client
+      .accounts
+      .v1
+      .update({
+        id: "1",
+        payload: {
+          data: {
+            id: "1",
+            type: "accounts",
+            attributes: {
+              age: 29
+            }
+          }
+        }
+      })
+  })
+  .then((response) => console.log({message: "Update", payload: response.data}))
+```
+
+In `POST`, `PATCH`, or `PUT` requests (mutations) `hsdk` expects a `payload` value that it uses in the body. This `update` request will update the age of `accounts/1` to `29`.
+
+hsdk doesn't care what kind of API you have, only that it is discoverable via `jsonapi-home`.
 
 
 ## jsonapi-home
