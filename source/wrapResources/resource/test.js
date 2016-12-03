@@ -9,7 +9,8 @@ describe("resource()", () => {
       id: "1",
       attributes: {
         intent: "list",
-        namespace: "v1/accounts",
+        version: "v1",
+        namespace: "accounts",
         verb: "GET",
         href: "https://example.com/v1/accounts/{id}",
         mediatype: "application/json"
@@ -26,7 +27,8 @@ describe("resource()", () => {
     const raw = {
       attributes: {
         intent: "list",
-        namespace: "v1/accounts",
+        version: "v1",
+        namespace: "accounts",
         verb: "GET",
         href: "https://example.com/v1/accounts/{id}",
         mediatype: "application/json"
@@ -42,7 +44,8 @@ describe("resource()", () => {
     const raw = {
       id: "1",
       attributes: {
-        namespace: "v1/accounts",
+        version: "v1",
+        namespace: "accounts",
         verb: "GET",
         href: "https://example.com/v1/accounts/{id}",
         mediatype: "application/json"
@@ -75,7 +78,8 @@ describe("resource()", () => {
       id: "1",
       attributes: {
         intent: "list",
-        namespace: "v1/accounts",
+        version: "v1",
+        namespace: "accounts",
         href: "https://example.com/v1/accounts/{id}",
         mediatype: "application/json"
       }
@@ -91,7 +95,8 @@ describe("resource()", () => {
       id: "1",
       attributes: {
         intent: "list",
-        namespace: "v1/accounts",
+        version: "v1",
+        namespace: "accounts",
         verb: "GET",
         mediatype: "application/json"
       }
@@ -107,7 +112,8 @@ describe("resource()", () => {
       id: "1",
       attributes: {
         intent: "list",
-        namespace: "v1/accounts",
+        version: "v1",
+        namespace: "accounts",
         verb: "GET",
         href: "https://example.com/v1/accounts/{id}"
       }

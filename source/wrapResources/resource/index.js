@@ -13,6 +13,7 @@ export default abstract({
     id: text,
     intent: text,
     namespace: text,
+    version: text,
     verb: text,
     href: text,
     mediatype: text
@@ -24,6 +25,7 @@ export default abstract({
     idPresent: propSatisfies(isPresent, "id"),
     intentPresent: propSatisfies(isPresent, "intent"),
     namespacePresent: propSatisfies(isPresent, "namespace"),
+    versionPresent: propSatisfies(isPresent, "version"),
     verbPresent: propSatisfies(isPresent, "verb"),
     hrefPresent: propSatisfies(isPresent, "href"),
     mediatypePresent: propSatisfies(isPresent, "mediatype")
