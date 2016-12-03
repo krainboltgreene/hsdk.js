@@ -4,9 +4,9 @@ import {prop} from "ramda"
 import wrapResources from "./wrapResources"
 import treeify from "./treeify"
 
-export default function hsdk ({protocol, host, root}) {
+export default function hsdk ({home}) {
   return axios({
-    url: `${protocol}://${host}/${root}`,
+    url: home,
     headers: {
       Accept: "application/vnd.api+json"
     },

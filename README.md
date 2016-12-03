@@ -16,7 +16,7 @@ Example at play: https://esnextb.in/?gist=1ddc4e3e62196c8b9542b87a6141dff4
 ``` javascript
 import hsdk from "hsdk"
 
-hsdk({protocol: "http", host: "hsdkjs.getsandbox.com", root: "v1/resources"})
+hsdk({home: "http://hsdkjs.getsandbox.com/v1/resources"})
   .then((client) => client.accounts.v1.list())
   .then((value) => console.log(value))
 ```
@@ -26,7 +26,7 @@ hsdk({protocol: "http", host: "hsdkjs.getsandbox.com", root: "v1/resources"})
 
 Much like [json-home](https://mnot.github.io/I-D/json-home/), a fantastic spec by @mnot, jsonapi-home is an attempt to allow clients to build themselves.
 
-Using the example above, we need a HTTP server running on `hsdkjs.getsandbox.com` that responds to `http` requests to `GET /v1/resources`.
+Using the example above, we need a HTTP server running at `http://hsdkjs.getsandbox.com` that responds to `GET /v1/resources` requests.
 
 Here is a sample CURL-based request (an example of what hsdk does under the hood):
 
