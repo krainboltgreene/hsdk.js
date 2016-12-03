@@ -17,7 +17,7 @@ Example at play: https://esnextb.in/?gist=1ddc4e3e62196c8b9542b87a6141dff4
 import hsdk from "hsdk"
 
 hsdk({protocol: "http", host: "hsdkjs.getsandbox.com", root: "v1/resources"})
-  .then((client) => client("v1/Accounts").list())
+  .then((client) => client.accounts.v1.list())
   .then((value) => console.log(value))
 ```
 
@@ -39,6 +39,7 @@ Each resource MUST have the following properties:
 
   - intent: The human name for this result, example: `list`, `show`, `create`, `destroy`, `update`
   - namespace: The groupings this resource is under, can be anything
+  - version: The version of the endpoint, if no version you SHOULD use `latest`
   - description: A short description for the resource
   - method: The HTTP verb used
   - href: A RFC 6570 URL template that the client can use directly
@@ -62,14 +63,15 @@ Date: Mon, 28 Nov 2016 19:50:32 GMT
   },
   "data": [
     {
-      "id": "v1-accounts-list",
+      "id": "accounts-v1-list",
       "type": "resources",
       "attributes": {
         "intent": "list",
-        "namespace": "v1/accounts",
+        "namespace": "accounts",
+        "version": "v1",
         "description": "List accounts.",
         "method": "GET",
-        "href": "http://hsdkjs.getsandbox.com/v2/accounts",
+        "href": "http://hsdkjs.getsandbox.com/v1/accounts",
         "query": {
           "filter": true,
           "sort": true
@@ -77,15 +79,16 @@ Date: Mon, 28 Nov 2016 19:50:32 GMT
         "mediatype": "application/vnd.api+json"
       },
       "links": {
-        "self": "http://hsdkjs.getsandbox.com/v1/resources/v1-accounts-list"
+        "self": "http://hsdkjs.getsandbox.com/v1/resources/accounts-v1-list"
       }
     },
     {
-      "id": "v1-accounts-show",
+      "id": "accounts-v1-show",
       "type": "resources",
       "attributes": {
         "intent": "show",
-        "namespace": "v1/accounts",
+        "namespace": "accounts",
+        "version": "v1",
         "description": "Show an individual account.",
         "method": "GET",
         "href": "http://hsdkjs.getsandbox.com/v1/accounts/{id}",
@@ -95,15 +98,16 @@ Date: Mon, 28 Nov 2016 19:50:32 GMT
         "mediatype": "application/vnd.api+json"
       },
       "links": {
-        "self": "http://hsdkjs.getsandbox.com/v1/resources/v1-accounts-show"
+        "self": "http://hsdkjs.getsandbox.com/v1/resources/accounts-v1-show"
       }
     },
     {
-      "id": "v1-accounts-update",
+      "id": "accounts-v1-update",
       "type": "resources",
       "attributes": {
         "intent": "update",
-        "namespace": "v1/accounts",
+        "namespace": "accounts",
+        "version": "v1",
         "description": "Update an individual account.",
         "method": "PATCH",
         "href": "http://hsdkjs.getsandbox.com/v1/accounts/{id}",
@@ -117,7 +121,7 @@ Date: Mon, 28 Nov 2016 19:50:32 GMT
         "mediatype": "application/vnd.api+json"
       },
       "links": {
-        "self": "http://hsdkjs.getsandbox.com/v1/resources/v1-accounts-update"
+        "self": "http://hsdkjs.getsandbox.com/v1/resources/accounts-v1-update"
       }
     }
   ]

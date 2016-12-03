@@ -15,5 +15,4 @@ export default function hsdk ({protocol, host, root}) {
     .then(handleResponse)
     .then(wrapResources)
     .then(treeify)
-    .then((client) => (key) => client[key])
 }
