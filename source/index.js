@@ -1,7 +1,7 @@
 import axios from "axios"
+import {prop} from "ramda"
 
 import wrapResources from "./wrapResources"
-import handleResponse from "./handleResponse"
 import treeify from "./treeify"
 
 export default function hsdk ({protocol, host, root}) {
@@ -12,7 +12,7 @@ export default function hsdk ({protocol, host, root}) {
     },
     responseType: "json"
   })
-    .then(handleResponse)
+    .then(prop("data"))
     .then(wrapResources)
     .then(treeify)
 }
