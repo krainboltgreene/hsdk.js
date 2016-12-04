@@ -52,7 +52,7 @@
     "greenkeeper": "^4",
     "http-server": "0.9.0",
     "mocha": "^2",
-    "npm": "^3",
+    "npm": "^4.0.2",
     "npm-run-all": "^3"
   },
   "dependencies": {
