@@ -5,7 +5,7 @@ import {omit} from "ramda"
 import identify from "./identify"
 
 export default function request ({method, href, mediatype}) {
-  return (configuration = {}) => {
+  return function call (configuration = {}) {
     const {payload = null} = configuration
     const url = urlTemplate.parse(href).expand(omit(["authentication", "payload"], configuration))
     const properties = {
