@@ -40,7 +40,7 @@
     "babel-plugin-transform-object-rest-spread": "^6",
     "babel-preset-latest": "^6",
     "babelify": "^7",
-    "browserify": "^13",
+    "browserify": "^14.0.0",
     "chai": "^3",
     "chokidar-cli": "^1",
     "eslint": "^3",
