@@ -48,7 +48,7 @@
     "eslint-plugin-immutable": "^1",
     "eslint-plugin-import": "^2",
     "eslint-plugin-mocha": "^4",
-    "eslint-plugin-node": "^3",
+    "eslint-plugin-node": "^4.0.1",
     "greenkeeper": "^4",
     "http-server": "0.9.0",
     "mocha": "^2",
