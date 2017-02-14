@@ -59,7 +59,7 @@
     "abstraction": "^9",
     "axios": "0.15.2",
     "httpstatuses": "^3",
-    "ramda": "0.21.0",
+    "ramda": "0.23.0",
     "ramda-extra": "^1",
     "recordType": "^1",
     "url-template": "^2"
