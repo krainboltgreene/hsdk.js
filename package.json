@@ -60,6 +60,7 @@
     "abstraction": "9.0.1",
     "axios": "0.15.3",
     "httpstatuses": "3.0.0",
+    "npm": "4.3.0",
     "ramda": "0.23.0",
     "ramda-extra": "1.7.0",
     "recordType": "1.0.0",
