@@ -13,8 +13,8 @@ describe("resource()", () => {
         namespace: "accounts",
         verb: "GET",
         href: "https://example.com/v1/accounts/{id}",
-        mediatype: "application/json"
-      }
+        mediatype: "application/json",
+      },
     }
     const {request} = subject(raw)
 
@@ -31,8 +31,8 @@ describe("resource()", () => {
         namespace: "accounts",
         verb: "GET",
         href: "https://example.com/v1/accounts/{id}",
-        mediatype: "application/json"
-      }
+        mediatype: "application/json",
+      },
     }
 
     it("has an error", () => {
@@ -48,8 +48,8 @@ describe("resource()", () => {
         namespace: "accounts",
         verb: "GET",
         href: "https://example.com/v1/accounts/{id}",
-        mediatype: "application/json"
-      }
+        mediatype: "application/json",
+      },
     }
 
     it("has an error", () => {
@@ -64,8 +64,8 @@ describe("resource()", () => {
         intent: "list",
         verb: "GET",
         href: "https://example.com/v1/accounts/{id}",
-        mediatype: "application/json"
-      }
+        mediatype: "application/json",
+      },
     }
 
     it("has an error", () => {
@@ -81,8 +81,8 @@ describe("resource()", () => {
         version: "v1",
         namespace: "accounts",
         href: "https://example.com/v1/accounts/{id}",
-        mediatype: "application/json"
-      }
+        mediatype: "application/json",
+      },
     }
 
     it("has an error", () => {
@@ -98,8 +98,8 @@ describe("resource()", () => {
         version: "v1",
         namespace: "accounts",
         verb: "GET",
-        mediatype: "application/json"
-      }
+        mediatype: "application/json",
+      },
     }
 
     it("has an error", () => {
@@ -115,8 +115,8 @@ describe("resource()", () => {
         version: "v1",
         namespace: "accounts",
         verb: "GET",
-        href: "https://example.com/v1/accounts/{id}"
-      }
+        href: "https://example.com/v1/accounts/{id}",
+      },
     }
 
     it("has an error", () => {

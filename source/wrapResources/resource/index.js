@@ -16,11 +16,9 @@ export default abstract({
     version: text,
     verb: text,
     href: text,
-    mediatype: text
+    mediatype: text,
   },
-  virtuals: {
-    request
-  },
+  virtuals: {request},
   validations: {
     idPresent: propSatisfies(isPresent, "id"),
     intentPresent: propSatisfies(isPresent, "intent"),
@@ -28,6 +26,6 @@ export default abstract({
     versionPresent: propSatisfies(isPresent, "version"),
     verbPresent: propSatisfies(isPresent, "verb"),
     hrefPresent: propSatisfies(isPresent, "href"),
-    mediatypePresent: propSatisfies(isPresent, "mediatype")
-  }
+    mediatypePresent: propSatisfies(isPresent, "mediatype"),
+  },
 })

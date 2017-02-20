@@ -10,26 +10,26 @@ describe("treeify()", () => {
         namespace: "accounts",
         version: "v1",
         intent: "list",
-        request: () => null
+        request: () => null,
       },
       {
         namespace: "accounts",
         version: "v1",
         intent: "show",
-        request: () => null
+        request: () => null,
       },
       {
         namespace: "accounts",
         version: "v2",
         intent: "show",
-        request: () => null
+        request: () => null,
       },
       {
         namespace: "sessions",
         version: "v2",
         intent: "create",
-        request: () => null
-      }
+        request: () => null,
+      },
     ]
 
     it("has a show property for v1/accounts", () => {
