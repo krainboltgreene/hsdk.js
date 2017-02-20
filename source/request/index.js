@@ -13,22 +13,22 @@ export default function request ({method, href, mediatype}) {
       headers: {
         "Content-Type": mediatype,
         "Accept": mediatype,
-        ...identify(configuration)
-      }
+        ...identify(configuration),
+      },
     }
 
     if (method === "POST" || method === "PUT" || method === "PATCH") {
       return axois({
         url,
         ...properties,
-        data: payload
+        data: payload,
       })
     }
 
     return axois({
       url,
       ...properties,
-      params: payload
+      params: payload,
     })
   }
 }

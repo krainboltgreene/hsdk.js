@@ -4,7 +4,7 @@ import {propSatisfies} from "ramda"
 import {isPresent} from "ramda-extra"
 import {hammer} from "ramda-extra"
 
-import request from "./request"
+import request from "../../request"
 
 export default abstract({
   name: "resource",
