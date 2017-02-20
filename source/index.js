@@ -1,18 +1,14 @@
 import axios from "axios"
-import {prop} from "ramda"
+import callHome from "./callHome"
 
-import wrapResources from "./wrapResources"
-import treeify from "./treeify"
+export default function hsdk ({home, mocks = false}) {
+  if (mocks) {
+    return callHome(Promise.resolve({data: {data: mocks}}))
+  }
 
-export default function hsdk ({home}) {
-  return axios({
+  return callHome(axios({
     url: home,
-    headers: {
-      Accept: "application/vnd.api+json"
-    },
-    responseType: "json"
-  })
-    .then(prop("data"))
-    .then(wrapResources)
-    .then(treeify)
+    headers: {Accept: "application/vnd.api+json"},
+    responseType: "json",
+  }))
 }
