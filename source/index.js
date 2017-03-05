@@ -1,14 +1,24 @@
 import axios from "axios"
 import callHome from "./callHome"
 
-export default function hsdk ({home, mocks = false}) {
-  if (mocks) {
-    return callHome(Promise.resolve({data: {data: mocks}}))
-  }
+type ResourceType = {
+  id: string,
+  attributes: {
+    intent: string,
+    version: string,
+    namespace: string,
+    verb: string,
+    href: string,
+    mediatype: string,
+  },
+}
 
-  return callHome(axios({
+export default function hsdk ({home, mocks}: {home: string, mocks?: Array<ResourceType>}): Promise<Object> {
+  const response = mocks ? Promise.resolve({data: {data: mocks}}) : axios({
     url: home,
     headers: {Accept: "application/vnd.api+json"},
     responseType: "json",
-  }))
+  })
+
+  return callHome(response)
 }

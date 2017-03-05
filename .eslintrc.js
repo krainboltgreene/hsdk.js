@@ -4,15 +4,26 @@ module.exports = {
     "babel",
     "immutable",
     "import",
-    "mocha",
+    "flowtype",
+    "promise"
   ],
   env: {
     es6: true,
     node: true,
-    mocha: true,
-    browser: true,
+    browser: true
   },
   rules: {
+    "promise/always-return": "error",
+    "promise/no-return-wrap": "error",
+    "promise/param-names": "error",
+    "promise/catch-or-return": "error",
+    "promise/no-native": "off", // We have babel
+    "promise/no-nesting": "error",
+    "promise/no-promise-in-callback": "error",
+    "promise/no-callback-in-promise": "error",
+    "promise/avoid-new": "error",
+    "promise/prefer-await-to-then": "off", // Not convinced of await/async
+    "promise/prefer-await-to-callbacks": "off", // Not convinced of await/async
     "accessor-pairs": "error",
     "array-bracket-spacing": "error",
     "array-callback-return": "error",
@@ -26,9 +37,9 @@ module.exports = {
     "brace-style": "error",
     "callback-return": "error",
     "camelcase": "warn",
-    "capitalized-comments": "error",
+    "capitalized-comments": "off",
     "class-methods-use-this": "error",
-    "comma-dangle": ["error", "always-multiline"],
+    "comma-dangle": ["error", "only-multiline"],
     "comma-spacing": "error",
     "comma-style": "error",
     "complexity": "error",
@@ -42,6 +53,25 @@ module.exports = {
     "dot-notation": "error",
     "eol-last": "error",
     "eqeqeq": "error",
+    "flowtype/boolean-style": "error",
+    "flowtype/define-flow-type": "error",
+    "flowtype/delimiter-dangle": ["error", "only-multiline"],
+    "flowtype/generic-spacing": "error",
+    "flowtype/no-dupe-keys": "error",
+    "flowtype/no-primitive-constructor-types": "error",
+    "flowtype/no-weak-types": "off", // Not very useful
+    "flowtype/object-type-delimiter": "error",
+    "flowtype/require-parameter-type": "error",
+    "flowtype/require-return-type": "error",
+    "flowtype/require-variable-type": "off", // Super annoying
+    "flowtype/semi": "off", // Super annoying
+    "flowtype/sort-keys": "off", // Causes more work than anything else
+    "flowtype/space-after-type-colon": "error",
+    "flowtype/space-before-generic-bracket": "error",
+    "flowtype/space-before-type-colon": "error",
+    "flowtype/type-id-match": "error",
+    "flowtype/union-intersection-spacing": "error",
+    "flowtype/use-flow-type": "error",
     "func-call-spacing": "error",
     "func-name-matching": "error",
     "func-names": "error",
@@ -55,7 +85,7 @@ module.exports = {
     "id-match": "error",
     "immutable/no-let": "error",
     "immutable/no-mutation": "warn",
-    "immutable/no-this": "off", // Doesn't work with react
+    "immutable/no-this": "error",
     "import/default": "error",
     "import/export": "error",
     "import/extensions": "error",
@@ -98,14 +128,6 @@ module.exports = {
     "max-params": "error",
     "max-statements-per-line": "error",
     "max-statements": "error",
-    "mocha/handle-done-callback": "error",
-    "mocha/no-exclusive-tests": "error",
-    "mocha/no-global-tests": "error",
-    "mocha/no-pending-tests": "error",
-    "mocha/no-skipped-tests": "error",
-    "mocha/no-synchronous-tests": "off", // Just not very good
-    "mocha/valid-suite-description": "error",
-    "mocha/valid-test-description": "off", // "Should" is crap wording
     "multiline-ternary": ["error", "never"],
     "new-cap": "error",
     "new-parens": "error",
