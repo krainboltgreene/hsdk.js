@@ -9,7 +9,7 @@ import {treeify} from "ramda-extra"
 import wrapResources from "../wrapResources"
 import request from "../request"
 
-export default function callHome (client: Promise<AxoisResponseType>): Promise<Object> {
+export default function callHome (client: Promise<ResponseType | MockType>): Promise<any> {
   return client
     .then(path(["data", "data"]))
     .then(wrapResources)
