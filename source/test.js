@@ -40,3 +40,11 @@ test("Returned promise resolution must be an object", ({type}) => {
   )
     .then((client) => type(client, "object"))
 })
+
+test("Returned promise resolution object must have a function for the action", ({type}) => {
+  return subject(
+    "",
+    mocks,
+  )
+    .then((client) => type(client.accounts.v1.list, "object"))
+})

@@ -9,7 +9,7 @@ import {treeify} from "ramda-extra"
 import wrapResources from "../wrapResources"
 import request from "../request"
 
-export default function callHome (client: Promise<ResponseType | MockType>): Promise<any> {
+export default function callHome (client: Promise<ResponseType | MockType>): Promise<SDKType> {
   return client
     .then(path(["data", "data"]))
     .then(wrapResources)
@@ -17,6 +17,7 @@ export default function callHome (client: Promise<ResponseType | MockType>): Pro
       groupBy(prop("namespace")),
       groupBy(prop("version")),
       indexBy(prop("intent")),
+      prop("request"),
     ]))
     .then(merge({request}))
 }
