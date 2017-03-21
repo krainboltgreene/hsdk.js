@@ -1,4 +1,4 @@
-type JSONAPIRResourceType = {
+type JSONAPIResourceType = {
   id?: string,
   type: string,
   attributes: ResourceFieldsType,
