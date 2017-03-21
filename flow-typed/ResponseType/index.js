@@ -1,0 +1,3 @@
+type ResponseType = {
+  data?: Object,
+}

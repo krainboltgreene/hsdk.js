@@ -4,5 +4,5 @@ type HomeType = {
     Accept: string,
     Authorization?: string,
   },
-  responseType: sring,
+  responseType: string,
 }
