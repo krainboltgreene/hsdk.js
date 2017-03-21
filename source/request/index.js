@@ -4,20 +4,6 @@ import {omit} from "ramda"
 
 import identify from "./identify"
 
-type AuthenticationType = {
-  shared: string,
-  secret: string,
-}
-type RequestMetadataType = {
-  method: string,
-  href: string,
-  mediatype: string
-}
-type RequestConfigurationType = {
-  payload: any,
-  authentication?: AuthenticationType,
-}
-
 export default function request ({method, href, mediatype}: RequestMetadataType): Function {
   return (configuration: RequestConfigurationType): Promise<Object> => {
     const {payload = {}} = configuration
