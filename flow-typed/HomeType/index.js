@@ -1,8 +1,1 @@
-type HomeType = {
-  url: string,
-  headers: {
-    Accept: string,
-    Authorization?: string,
-  },
-  responseType: string,
-}
+type HomeType = string | ComplexHomeType
