@@ -11,10 +11,12 @@
     "test": "babel-tap './source/**/test.js'",
     "start": "npm-run-all --parallel watch:build watch:test",
     "lint": "eslint './source/'",
+    "check": "flow check",
     "watch": "npm-run-all --parallel watch:test watch:lint watch:build",
     "watch:build": "chokidar './source/' --initial --command 'npm run build --silent'",
     "watch:test": "chokidar './source/' --initial --command 'npm run test --silent'",
-    "watch:lint": "chokidar './source/' --initial --command 'npm run lint --silent'"
+    "watch:lint": "chokidar './source/' --initial --command 'npm run lint --silent'",
+    "watch:check": "chokidar './source/' --initial --command 'npm run check --silent'"
   },
   "repository": {
     "type": "git",
