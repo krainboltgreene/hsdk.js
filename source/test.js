@@ -46,5 +46,5 @@ test("Returned promise resolution object must have a function for the action", (
     "",
     mocks,
   )
-    .then((client) => type(client.accounts.v1.list, "object"))
+    .then((client) => type(client.accounts.v1.list, "function"))
 })
