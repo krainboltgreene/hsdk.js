@@ -1,7 +1,7 @@
 type SDKType = {
-  [resource: string]: {
+  [namespace: string]: {
     [version: string]: {
-      [intent: string]: (payload?: any) => Promise<any>
+      [intent: string]: (configuration?: RequestConfigurationType) => Promise<any>
     }
   }
 }
