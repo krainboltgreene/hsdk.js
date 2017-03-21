@@ -5,29 +5,6 @@ import {isPopulated} from "ramda-extra"
 
 import resource from "./resource"
 
-type ResourceType = {
-  id: string,
-  attributes: {
-    intent: string,
-    version: string,
-    namespace: string,
-    verb: string,
-    href: string,
-    mediatype: string,
-  },
-}
-
-type ResourceModelType = {
-  id: string,
-  intent: string,
-  version: string,
-  namespace: string,
-  verb: string,
-  href: string,
-  mediatype: string,
-  request: Function,
-}
-
 export default function wrapResources (resources: Array<ResourceType>): Array<ResourceModelType> {
   if (isNil(resources)) {
     throw new Error(`Resources was ${type(resources)} and not an Array`)
