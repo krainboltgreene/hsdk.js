@@ -1,4 +1,4 @@
 type RequestConfigurationType = {
-  payload: any,
+  payload?: any,
   authentication?: AuthenticationType,
 }
