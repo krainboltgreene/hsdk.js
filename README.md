@@ -44,21 +44,18 @@ This will `log` a single account, with the `id` of `1`
 ``` javascript
 sdk
   .then((client) => {
-    return client
-      .accounts
-      .v1
-      .update({
-        id: "1",
-        payload: {
-          data: {
-            id: "1",
-            type: "accounts",
-            attributes: {
-              age: 29
-            }
+    return client.accounts.v1.update({
+      id: "1",
+      payload: {
+        data: {
+          id: "1",
+          type: "accounts",
+          attributes: {
+            age: 29
           }
         }
-      })
+      }
+    })
   })
   .then((response) => console.log({message: "Update", payload: response.data}))
 ```
