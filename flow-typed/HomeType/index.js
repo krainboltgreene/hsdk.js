@@ -1,0 +1,1 @@
+type HomeType = string | ComplexHomeType
