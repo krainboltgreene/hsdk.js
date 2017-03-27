@@ -1,5 +1,7 @@
 # hsdk
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/krainboltgreene/hsdk.js.svg)](https://greenkeeper.io/)
+
 hsdk stands for HATEOAS Software Development Kit. This library reads from a specified 'application metadata' endpoint and generates an HTTP HATEOAS API client.
 
 ![Version][BADGE_VERSION]
