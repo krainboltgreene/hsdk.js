@@ -1,6 +1,6 @@
 {
   "name": "hsdk",
-  "version": "5.0.0",
+  "version": "6.0.1",
   "description": "A hypermedia standard development kit for knowing about home api endpoints",
   "main": "transpiled/source/index.js",
   "scripts": {
@@ -11,10 +11,12 @@
     "test": "babel-tap './source/**/test.js'",
     "start": "npm-run-all --parallel watch:build watch:test",
     "lint": "eslint './source/'",
+    "check": "flow check",
     "watch": "npm-run-all --parallel watch:test watch:lint watch:build",
     "watch:build": "chokidar './source/' --initial --command 'npm run build --silent'",
     "watch:test": "chokidar './source/' --initial --command 'npm run test --silent'",
-    "watch:lint": "chokidar './source/' --initial --command 'npm run lint --silent'"
+    "watch:lint": "chokidar './source/' --initial --command 'npm run lint --silent'",
+    "watch:check": "chokidar './source/' --initial --command 'npm run check --silent'"
   },
   "repository": {
     "type": "git",
@@ -34,22 +36,22 @@
   },
   "homepage": "https://github.com/krainboltgreene/hsdk.js#readme",
   "devDependencies": {
-    "babel-cli": "6.23.0",
-    "babel-core": "6.23.1",
+    "babel-cli": "6.24.0",
+    "babel-core": "6.24.0",
     "babel-eslint": "7.2.0",
     "babel-plugin-transform-object-rest-spread": "6.23.0",
-    "babel-preset-env": "1.2.0",
+    "babel-preset-env": "1.2.2",
     "babel-preset-flow": "6.23.0",
     "chokidar-cli": "1.2.0",
-    "eslint": "3.17.0",
+    "eslint": "3.18.0",
     "eslint-plugin-babel": "4.1.0",
     "eslint-plugin-flowtype": "2.30.0",
     "eslint-plugin-immutable": "1.0.0",
     "eslint-plugin-import": "2.2.0",
-    "eslint-plugin-node": "4.0.1",
+    "eslint-plugin-node": "4.2.1",
     "eslint-plugin-promise": "3.5.0",
     "flow": "0.2.3",
-    "flow-bin": "0.40.0",
+    "flow-bin": "0.42.0",
     "flow-typed": "2.0.0",
     "greenkeeper": "4.2.1",
     "http-server": "0.9.0",
@@ -61,7 +63,7 @@
     "babel-tap": "5.0.0",
     "httpstatuses": "3.0.0",
     "ramda": "0.23.0",
-    "ramda-extra": "1.7.0",
+    "ramda-extra": "4.0.0",
     "tap": "10.3.0",
     "url-template": "2.0.8"
   }

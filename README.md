@@ -13,12 +13,17 @@ Example at play: https://esnextb.in/?gist=1ddc4e3e62196c8b9542b87a6141dff4
 
 ## using
 
-First you need to define your core sdk:
+First you need to define your core sdk and in this example we'll our jsonapi.org specification-compliant endpoint:
 
 ``` javascript
 import hsdk from "hsdk"
 
-const sdk = hsdk({home: "https://hsdkjs.getsandbox.com/v1/resources"})
+const sdk = hsdk({
+  url: "https://hsdkjs.getsandbox.com/v1/resources",
+  headers: {
+    Accept: "application/vnd.api+json",
+  },
+}})
 ```
 
 `sdk` above is a `Promise` based on a request/response to/from the home resource.
@@ -44,21 +49,18 @@ This will `log` a single account, with the `id` of `1`
 ``` javascript
 sdk
   .then((client) => {
-    return client
-      .accounts
-      .v1
-      .update({
-        id: "1",
-        payload: {
-          data: {
-            id: "1",
-            type: "accounts",
-            attributes: {
-              age: 29
-            }
+    return client.accounts.v1.update({
+      id: "1",
+      payload: {
+        data: {
+          id: "1",
+          type: "accounts",
+          attributes: {
+            age: 29
           }
         }
-      })
+      }
+    })
   })
   .then((response) => console.log({message: "Update", payload: response.data}))
 ```

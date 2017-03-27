@@ -2,28 +2,14 @@ import axois from "axios"
 import urlTemplate from "url-template"
 import {omit} from "ramda"
 
-import identify from "./identify"
-
-type AuthenticationType = {
-  shared: string,
-  secret: string,
-}
-type RequestMetadataType = {
-  method: string,
-  href: string,
-  mediatype: string
-}
-type RequestConfigurationType = {
-  payload: any,
-  authentication?: AuthenticationType,
-}
+import * as authenticate from "./authenticate"
 
 export default function request ({method, href, mediatype}: RequestMetadataType): Function {
-  return (configuration: RequestConfigurationType): Promise<Object> => {
-    const {payload = {}} = configuration
+  return function requestWithMetadata (configuration: RequestConfigurationType): Promise<JSONAPIRootType> {
+    const {payload} = configuration
     const {authentication} = configuration
     const url = urlTemplate.parse(href).expand(omit(["authentication", "payload"], configuration))
-    const identity = authentication ? identify(authentication) : {}
+    const identity = authentication ? authenticate[authentication.scheme](authentication) : {}
     const properties = {
       method,
       headers: {

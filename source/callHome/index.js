@@ -1,19 +1,23 @@
 /* eslint-disable no-console */
 import {path} from "ramda"
 import {merge} from "ramda"
+import {prop} from "ramda"
+import {groupBy} from "ramda"
+import {indexBy} from "ramda"
+import {treeify} from "ramda-extra"
 
 import wrapResources from "../wrapResources"
-import treeify from "../treeify"
 import request from "../request"
 
-type AxoisResponseType = {
-  data: Object | null,
-}
-
-export default function callHome (client: Promise<AxoisResponseType>): Promise<Object> {
+export default function callHome (client: Promise<ResponseType | MockType>): Promise<SDKType> {
   return client
     .then(path(["data", "data"]))
     .then(wrapResources)
-    .then(treeify)
+    .then(treeify([
+      groupBy(prop("namespace")),
+      groupBy(prop("version")),
+      indexBy(prop("intent")),
+      prop("request"),
+    ]))
     .then(merge({request}))
 }
