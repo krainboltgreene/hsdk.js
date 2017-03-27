@@ -3,35 +3,48 @@ import {test} from "tap"
 
 import subject from "./"
 
-const mocks = [
-  {
-    id: "1",
-    attributes: {
-      intent: "list",
-      version: "v1",
-      namespace: "accounts",
-      verb: "GET",
-      href: "https://example.com/v1/accounts/{id}",
-      mediatype: "application/json",
-    },
-  },
-]
+const mocks = {
+  data: {
+    data: [
+      {
+        id: "1",
+        type: "resources",
+        attributes: {
+          intent: "list",
+          version: "v1",
+          namespace: "accounts",
+          verb: "GET",
+          href: "https://example.com/v1/accounts/{id}",
+          mediatype: "application/json",
+        },
+      },
+    ]
+  }
+}
 
-test(({type, end}) => {
+test("Must be a function", ({type, end}) => {
   type(subject, "function")
   end()
 })
-test(({type, end}) => {
-  type(subject({
-    home: "",
+test("Must return a promise", ({type, end}) => {
+  type(subject(
+    "",
     mocks,
-  }), "Promise")
+  ), "Promise")
   end()
 })
-test(({type}) => {
-  return subject({
-    home: "",
-    mocks
-  })
+test("Returned promise resolution must be an object", ({type}) => {
+  return subject(
+    "",
+    mocks,
+  )
     .then((client) => type(client, "object"))
+})
+
+test("Returned promise resolution object must have a function for the action", ({type}) => {
+  return subject(
+    "",
+    mocks,
+  )
+    .then((client) => type(client.accounts.v1.list, "function"))
 })
