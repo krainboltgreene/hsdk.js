@@ -39,10 +39,10 @@
     "babel-core": "6.24.0",
     "babel-eslint": "7.2.1",
     "babel-plugin-transform-object-rest-spread": "6.23.0",
-    "babel-preset-env": "1.2.2",
+    "babel-preset-env": "1.3.0",
     "babel-preset-flow": "6.23.0",
     "chokidar-cli": "1.2.0",
-    "eslint": "3.18.0",
+    "eslint": "3.19.0",
     "eslint-plugin-babel": "4.1.1",
     "eslint-plugin-flowtype": "2.30.4",
     "eslint-plugin-immutable": "1.0.0",
@@ -58,12 +58,12 @@
   },
   "dependencies": {
     "abstraction": "9.0.2",
-    "axios": "0.15.3",
+    "axios": "0.16.0",
     "babel-tap": "5.0.0",
     "httpstatuses": "3.0.0",
     "ramda": "0.23.0",
     "ramda-extra": "4.1.0",
-    "tap": "10.3.0",
+    "tap": "10.3.1",
     "url-template": "2.0.8"
   }
 }
