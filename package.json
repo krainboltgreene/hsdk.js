@@ -62,7 +62,7 @@
     "babel-tap": "5.0.0",
     "httpstatuses": "3.0.0",
     "ramda": "0.23.0",
-    "ramda-extra": "4.1.2",
+    "ramda-extra": "4.2.0",
     "tap": "10.3.1",
     "url-template": "2.0.8"
   }
