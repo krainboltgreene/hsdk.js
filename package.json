@@ -63,7 +63,7 @@
     "httpstatuses": "3.0.0",
     "ramda": "0.23.0",
     "ramda-extra": "4.2.0",
-    "tap": "10.3.1",
+    "tap": "10.3.2",
     "url-template": "2.0.8"
   }
 }
