@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import {path} from "ramda"
 import {merge} from "ramda"
 import {prop} from "ramda"
