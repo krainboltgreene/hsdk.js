@@ -4,7 +4,6 @@ import {propSatisfies} from "ramda"
 import {hammer} from "ramda-extra"
 import isPresent from "@unction/ispresent"
 
-import request from "../../request"
 
 export default abstract({
   name: "resource",
