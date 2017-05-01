@@ -1,30 +1,36 @@
-import {abstract} from "abstraction"
-import {text} from "abstraction"
+import abstraction from "abstraction"
 import {propSatisfies} from "ramda"
-import {hammer} from "ramda-extra"
+import {prop} from "ramda"
 import isPresent from "@unction/ispresent"
+import isPopulated from "@unction/ispopulated"
+import isType from "@unction/istype"
 
+import resourceAttributes from "./resourceAttributes"
 
-export default abstract({
-  name: "resource",
-  source: hammer("attributes"),
-  schema: {
-    id: text,
-    intent: text,
-    namespace: text,
-    version: text,
-    verb: text,
-    href: text,
-    mediatype: text,
+export default abstraction({
+  attributes: {
+    id: {source: prop("id")},
+    type: {source: prop("type")},
+    attributes: {
+      source: prop("attributes"),
+      coerce: resourceAttributes,
+    },
+    links: {source: prop("links")},
   },
-  virtuals: {request},
   validations: {
-    idPresent: propSatisfies(isPresent, "id"),
-    intentPresent: propSatisfies(isPresent, "intent"),
-    namespacePresent: propSatisfies(isPresent, "namespace"),
-    versionPresent: propSatisfies(isPresent, "version"),
-    verbPresent: propSatisfies(isPresent, "verb"),
-    hrefPresent: propSatisfies(isPresent, "href"),
-    mediatypePresent: propSatisfies(isPresent, "mediatype"),
-  },
+    id: {
+      isPresent: propSatisfies(isPresent, "id"),
+      isString: propSatisfies(isType("String"), "id"),
+      isPopulated: propSatisfies(isPopulated, "id"),
+    },
+    type: {
+      isPresent: propSatisfies(isPresent, "type"),
+      isString: propSatisfies(isType("String"), "type"),
+      isPopulated: propSatisfies(isPopulated, "type"),
+    },
+    attributes: {
+      isPresent: propSatisfies(isPresent, "attributes"),
+      isPopulated: propSatisfies(isPopulated, "attributes")
+    }
+  }
 })
