@@ -5,10 +5,10 @@
   "main": "transpiled/source/index.js",
   "scripts": {
     "prepublish": "npm run build",
-    "build": "rm -rf './transpiled/' && mkdir './transpiled/' && babel './source/**/index.js' -d './transpiled/'",
     "example": "browserify --verbose --transform babelify --entry './example/client.js' --outfile './example/index.js'",
     "test": "babel-tap './source/**/test.js'",
     "start": "npm-run-all --parallel watch:build watch:test",
+    "build": "babel './source/**/*.js' -d './transpiled/'",
     "lint": "eslint './source/'",
     "check": "flow check",
     "watch": "npm-run-all --parallel watch:test watch:lint watch:build",
