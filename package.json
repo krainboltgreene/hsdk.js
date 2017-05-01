@@ -57,7 +57,7 @@
     "@unction/mapvalues": "1.0.2",
     "@unction/resolvep": "1.0.0",
     "@unction/treeify": "1.0.8",
-    "abstraction": "10.0.0",
+    "abstraction": "10.1.0",
     "axios": "0.16.1",
     "httpstatuses": "3.0.0",
     "ramda": "0.23.0",
