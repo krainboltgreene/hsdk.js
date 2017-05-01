@@ -1,8 +1,8 @@
 import {abstract} from "abstraction"
 import {text} from "abstraction"
 import {propSatisfies} from "ramda"
-import {isPresent} from "ramda-extra"
 import {hammer} from "ramda-extra"
+import isPresent from "@unction/ispresent"
 
 import request from "../../request"
 

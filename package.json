@@ -50,6 +50,13 @@
     "npm-run-all": "4.0.2"
   },
   "dependencies": {
+    "@unction/hammer": "1.0.0",
+    "@unction/ispopulated": "1.0.0",
+    "@unction/ispresent": "1.0.0",
+    "@unction/istype": "1.0.0",
+    "@unction/mapvalues": "1.0.2",
+    "@unction/resolvep": "1.0.0",
+    "@unction/treeify": "1.0.8",
     "abstraction": "10.0.0",
     "axios": "0.16.1",
     "httpstatuses": "3.0.0",

@@ -1,7 +1,7 @@
-import {map} from "ramda"
+import mapValues from "@unction/mapvalues"
 import {type} from "ramda"
 import {isNil} from "ramda"
-import {isPopulated} from "ramda-extra"
+import isPopulated from "@unction/ispopulated"
 
 import resource from "./resource"
 
@@ -11,7 +11,7 @@ export default function wrapResources (resources: Array<ResourceType>): Array<Re
   }
 
   if (isPopulated(resources)) {
-    return map(resource, resources)
+    return mapValues(resource)(resources)
   }
 
   throw new Error("hsdk recieved an invalid response payload, check the home network request")
