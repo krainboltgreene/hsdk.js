@@ -5,17 +5,11 @@
   "main": "transpiled/source/index.js",
   "scripts": {
     "prepublish": "npm run build",
-    "example": "browserify --verbose --transform babelify --entry './example/client.js' --outfile './example/index.js'",
-    "test": "babel-tap './source/**/test.js'",
-    "start": "npm-run-all --parallel watch:build watch:test",
     "build": "babel './source/**/*.js' -d './transpiled/'",
+    "pretest": "npm run build",
+    "test": "tap './transpiled/**/test.js'",
     "lint": "eslint './source/'",
-    "check": "flow check",
-    "watch": "npm-run-all --parallel watch:test watch:lint watch:build",
-    "watch:build": "chokidar './source/' --initial --command 'npm run build --silent'",
-    "watch:test": "chokidar './source/' --initial --command 'npm run test --silent'",
-    "watch:lint": "chokidar './source/' --initial --command 'npm run lint --silent'",
-    "watch:check": "chokidar './source/' --initial --command 'npm run check --silent'"
+    "check": "flow check"
   },
   "repository": {
     "type": "git",
@@ -53,17 +47,15 @@
     "flow-bin": "0.44.0",
     "flow-typed": "2.0.0",
     "greenkeeper": "4.2.1",
-    "http-server": "0.9.0",
+    "tap": "10.3.2",
     "npm-run-all": "4.0.2"
   },
   "dependencies": {
-    "abstraction": "9.0.2",
-    "axios": "0.16.1",
-    "babel-tap": "5.0.0",
+    "abstraction": "9.0.1",
+    "axios": "0.15.3",
     "httpstatuses": "3.0.0",
     "ramda": "0.23.0",
-    "ramda-extra": "4.2.0",
-    "tap": "10.3.2",
+    "ramda-extra": "4.0.0",
     "url-template": "2.0.8"
   }
 }
