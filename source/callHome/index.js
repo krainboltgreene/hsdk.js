@@ -1,24 +1,22 @@
 import {path} from "ramda"
-import {merge} from "ramda"
 import {prop} from "ramda"
 import {groupBy} from "ramda"
 import {indexBy} from "ramda"
 import treeify from "@unction/treeify"
+import mapValues from "@unction/mapvalues"
 
-import wrapResources from "../wrapResources"
-import request from "./request"
+import resource from "./resource"
 
 const tree = treeify([
-  groupBy(prop("namespace")),
-  groupBy(prop("version")),
-  indexBy(prop("intent")),
+  groupBy(path(["attributes", "namespace"])),
+  groupBy(path(["attributes", "version"])),
+  indexBy(path(["attributes", "intent"])),
   prop("request"),
 ])
 
 export default function callHome (client: Promise<ResponseType | MockType>): Promise<SDKType> {
   return client
     .then(path(["data", "data"]))
-    .then(wrapResources)
+    .then(mapValues(resource))
     .then(tree)
-    .then(merge({request}))
 }

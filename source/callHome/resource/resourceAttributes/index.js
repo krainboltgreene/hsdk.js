@@ -57,5 +57,5 @@ export default abstraction({
       isString: propSatisfies(isType("String"), "mediatype"),
       isPopulated: propSatisfies(isPopulated, "mediatype"),
     },
-  }
+  },
 })

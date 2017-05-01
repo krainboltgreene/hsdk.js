@@ -10,12 +10,14 @@ const mocks = {
         id: "1",
         type: "resources",
         attributes: {
-          intent: "list",
+          intent: "show",
           version: "v1",
           namespace: "accounts",
-          verb: "GET",
+          method: "GET",
+          description: "test",
+          query: {},
           href: "https://example.com/v1/accounts/{id}",
-          mediatype: "application/json",
+          mediatype: "application/vnd.api+json",
         },
       },
     ]
@@ -24,15 +26,19 @@ const mocks = {
 
 test("Must be a function", ({type, end}) => {
   type(subject, "function")
+
   end()
 })
+
 test("Must return a promise", ({type, end}) => {
   type(subject(
     "",
     mocks,
   ), "Promise")
+
   end()
 })
+
 test("Returned promise resolution must be an object", ({type}) => {
   return subject(
     "",
@@ -46,5 +52,5 @@ test("Returned promise resolution object must have a function for the action", (
     "",
     mocks,
   )
-    .then((client) => type(client.accounts.v1.list, "function"))
+    .then((client) => type(client.accounts.v1.show, "function"))
 })
