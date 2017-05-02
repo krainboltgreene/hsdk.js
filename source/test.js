@@ -54,3 +54,8 @@ test("Returned promise resolution object must have a function for the action", (
   )
     .then((client) => type(client.accounts.v1.show, "function"))
 })
+
+test("With a real endpoint", ({type}) => {
+  return subject({url: "https://hsdkjs.getsandbox.com/v1/resources"})
+    .then((client) => type(client.accounts.v1.show, "function"))
+})
