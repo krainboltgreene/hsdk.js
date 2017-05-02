@@ -51,7 +51,7 @@
   },
   "dependencies": {
     "@unction/hammer": "1.0.0",
-    "@unction/ispopulated": "1.0.0",
+    "@unction/ispopulated": "2.0.0",
     "@unction/ispresent": "1.0.0",
     "@unction/istype": "1.0.0",
     "@unction/mapvalues": "1.0.2",
