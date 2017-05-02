@@ -13,7 +13,7 @@ export default abstraction({
     description: {source: prop("description")},
     method: {source: prop("method")},
     href: {source: prop("href")},
-    query: {source: prop("query")},
+    allowed: {source: prop("allowed")},
     mediatype: {source: prop("mediatype")},
   },
   validations: {
@@ -47,10 +47,9 @@ export default abstraction({
       isString: propSatisfies(isType("String"), "href"),
       isPopulated: propSatisfies(isPopulated, "href"),
     },
-    query: {
-      isPresent: propSatisfies(isPresent, "query"),
-      isObject: propSatisfies(isType("Object"), "query"),
-      isPopulated: propSatisfies(isPopulated, "query"),
+    allowed: {
+      isPresent: propSatisfies(isPresent, "allowed"),
+      isArray: propSatisfies(isType("Array"), "allowed"),
     },
     mediatype: {
       isPresent: propSatisfies(isPresent, "mediatype"),

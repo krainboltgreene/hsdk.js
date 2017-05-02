@@ -17,7 +17,7 @@ const mock = Promise
             namespace: "accounts",
             method: "GET",
             description: "A test",
-            query: {},
+            allowed: [],
             href: "https://example.com/v1/accounts/{id}",
             mediatype: "application/vnd.api+json",
           },

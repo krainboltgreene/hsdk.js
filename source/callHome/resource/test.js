@@ -16,7 +16,7 @@ test(({similar, end}) => {
           namespace: "accounts",
           description: "test",
           href: "https://api.example.com/v1/accounts",
-          query: {},
+          allowed: [],
           mediatype: "application/vnd.api+json"
         }
       }
@@ -31,7 +31,7 @@ test(({similar, end}) => {
         namespace: "accounts",
         description: "test",
         href: "https://api.example.com/v1/accounts",
-        query: {},
+        allowed: [],
         mediatype: "application/vnd.api+json"
       }
     }

@@ -92,8 +92,7 @@ Each resource MUST have the following properties:
   - method: The HTTP verb used
   - href: A RFC 6570 URL template that the client can use directly
   - mediatype: The preferred mediatype for this endpoint
-  - allowed (FUTURE): An allowed list of fields
-  - query (FUTURE): An allowed list of query parameter names
+  - allowed: A list of paths that tells the client what query or body properties are permissible.
 
 That response will look like this:
 
@@ -120,10 +119,10 @@ Date: Mon, 28 Nov 2016 19:50:32 GMT
         "description": "List accounts.",
         "method": "GET",
         "href": "https://hsdkjs.getsandbox.com/v1/accounts",
-        "query": {
-          "filter": true,
-          "sort": true
-        },
+        "allowed": [
+          ["fields"],
+          ["sort"]
+        ],
         "mediatype": "application/vnd.api+json"
       },
       "links": {
@@ -140,9 +139,9 @@ Date: Mon, 28 Nov 2016 19:50:32 GMT
         "description": "Show an individual account.",
         "method": "GET",
         "href": "https://hsdkjs.getsandbox.com/v1/accounts/{id}",
-        "query": {
-          "fields": true
-        },
+        "allowed": [
+          ["fields"]
+        ],
         "mediatype": "application/vnd.api+json"
       },
       "links": {
@@ -160,11 +159,8 @@ Date: Mon, 28 Nov 2016 19:50:32 GMT
         "method": "PATCH",
         "href": "https://hsdkjs.getsandbox.com/v1/accounts/{id}",
         "allowed": [
-          [
-            "data",
-            "attributes",
-            "age"
-          ]
+          ["data", "attributes", "age"],
+          ["data", "attributes", "name"]
         ],
         "mediatype": "application/vnd.api+json"
       },

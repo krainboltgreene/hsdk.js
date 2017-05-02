@@ -15,7 +15,7 @@ const mocks = {
           namespace: "accounts",
           method: "GET",
           description: "test",
-          query: {},
+          allowed: [],
           href: "https://example.com/v1/accounts/{id}",
           mediatype: "application/vnd.api+json",
         },
