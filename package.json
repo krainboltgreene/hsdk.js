@@ -1,6 +1,6 @@
 {
   "name": "hsdk",
-  "version": "7.0.0",
+  "version": "8.0.0",
   "description": "A hypermedia standard development kit for knowing about home api endpoints",
   "main": "transpiled/source/index.js",
   "scripts": {
