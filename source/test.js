@@ -32,7 +32,7 @@ test("Must be a function", ({type, end}) => {
 
 test("Must return a promise", ({type, end}) => {
   type(subject(
-    "",
+    {},
     mocks,
   ), "Promise")
 
@@ -41,7 +41,7 @@ test("Must return a promise", ({type, end}) => {
 
 test("Returned promise resolution must be an object", ({type}) => {
   return subject(
-    "",
+    {},
     mocks,
   )
     .then((client) => type(client, "object"))
@@ -49,7 +49,7 @@ test("Returned promise resolution must be an object", ({type}) => {
 
 test("Returned promise resolution object must have a function for the action", ({type}) => {
   return subject(
-    "",
+    {},
     mocks,
   )
     .then((client) => type(client.accounts.v1.show, "function"))
