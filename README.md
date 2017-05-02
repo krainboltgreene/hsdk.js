@@ -23,7 +23,7 @@ const sdk = hsdk({
   headers: {
     Accept: "application/vnd.api+json",
   },
-}})
+})
 ```
 
 `sdk` above is a `Promise` based on a request/response to/from the home resource.
