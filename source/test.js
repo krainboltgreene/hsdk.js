@@ -55,7 +55,29 @@ test("Returned promise resolution object must have a function for the action", (
     .then((client) => type(client.accounts.v1.show, "function"))
 })
 
-test("With a real endpoint", ({type}) => {
+test("With a real show endpoint", ({type}) => {
   return subject({url: "https://hsdkjs.getsandbox.com/v1/resources"})
-    .then((client) => type(client.accounts.v1.show, "function"))
+    .then((client) => client.accounts.v1.list())
+    .then((response) => type(response, "object"))
+})
+
+test("With a real show endpoint", ({type}) => {
+  return subject({url: "https://hsdkjs.getsandbox.com/v1/resources"})
+    .then((client) => client.accounts.v1.show({id: "1"}))
+    .then((response) => type(response, "object"))
+})
+
+test("With a real update endpoint", ({type}) => {
+  return subject({url: "https://hsdkjs.getsandbox.com/v1/resources"})
+    .then((client) => client.accounts.v1.update({
+      id: "1",
+      payload: {
+        data: {
+          id: "1",
+          type: "accounts",
+          attributes: {age: 29}
+        }
+      }
+    }))
+    .then((response) => type(response, "object"))
 })
