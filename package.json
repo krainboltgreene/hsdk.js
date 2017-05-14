@@ -56,7 +56,7 @@
     "@unction/istype": "1.0.0",
     "@unction/mapvalues": "1.0.2",
     "@unction/resolvep": "1.0.0",
-    "@unction/treeify": "1.0.8",
+    "@unction/treeify": "1.0.9",
     "abstraction": "10.3.0",
     "axios": "0.16.1",
     "httpstatuses": "3.0.0",
