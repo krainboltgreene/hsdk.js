@@ -46,7 +46,7 @@
     "flow-bin": "0.45.0",
     "flow-typed": "2.1.2",
     "greenkeeper": "4.2.1",
-    "tap": "10.3.4",
+    "tap": "10.5.0",
     "npm-run-all": "4.0.2"
   },
   "dependencies": {
