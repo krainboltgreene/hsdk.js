@@ -53,7 +53,7 @@
     "@unction/hammer": "1.0.0",
     "@unction/ispopulated": "2.0.0",
     "@unction/ispresent": "1.1.0",
-    "@unction/istype": "1.0.0",
+    "@unction/istype": "1.0.4",
     "@unction/mapvalues": "1.0.2",
     "@unction/resolvep": "1.0.1",
     "@unction/treeify": "1.0.8",
