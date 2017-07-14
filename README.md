@@ -173,6 +173,16 @@ Date: Mon, 28 Nov 2016 19:50:32 GMT
 ```
 
 
+# contributing
+
+  1. Read the [Code of Conduct](/CONDUCT.md)
+  2. Fork it
+  3. Create your feature branch (`git checkout -b my-new-feature`)
+  4. Commit your changes (`git commit -am 'Add some feature'`)
+  5. Push to the branch (`git push origin my-new-feature`)
+  6. Create new Pull Request
+
+
 [BADGE_TRAVIS]: https://img.shields.io/travis/krainboltgreene/hsdk.js.svg?maxAge=2592000&style=flat-square
 [BADGE_VERSION]: https://img.shields.io/npm/v/hsdk.svg?maxAge=2592000&style=flat-square
 [BADGE_STABILITY]: https://img.shields.io/badge/stability-strong-green.svg?maxAge=2592000&style=flat-square

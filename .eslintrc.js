@@ -1,9 +1,6 @@
 module.exports = {
   parser: "babel-eslint",
   plugins: [
-    "babel",
-    "immutable",
-    "import",
     "flowtype",
     "promise"
   ],
@@ -30,8 +27,6 @@ module.exports = {
     "arrow-body-style": "off", // Weird style
     "arrow-parens": "error",
     "arrow-spacing": "error",
-    "babel/new-cap": "error",
-    "babel/no-invalid-this": "error",
     "block-scoped-var": "error",
     "block-spacing": "error",
     "brace-style": "error",
@@ -83,36 +78,6 @@ module.exports = {
     "id-blacklist": "error",
     "id-length": "error",
     "id-match": "error",
-    "immutable/no-let": "error",
-    "immutable/no-mutation": "warn",
-    "immutable/no-this": "error",
-    "import/default": "error",
-    "import/export": "error",
-    "import/extensions": "error",
-    "import/first": "error",
-    "import/max-dependencies": "warn",
-    "import/named": "error",
-    "import/namespace": "error",
-    "import/newline-after-import": "error",
-    "import/no-absolute-path": "error",
-    "import/no-amd": "error",
-    "import/no-commonjs": "error",
-    "import/no-deprecated": "error",
-    "import/no-duplicates": "off", // This rule doesn't understand my style
-    "import/no-dynamic-require": "error",
-    "import/no-extraneous-dependencies": "error",
-    "import/no-mutable-exports": "error",
-    "import/no-named-as-default-member": "error",
-    "import/no-named-as-default": "error",
-    "import/no-namespace": "off", // Doesn't work with star imports?
-    "import/no-nodejs-modules": "off", // Only for frontend
-    "import/no-restricted-paths": "off", // Isn't quite helpful
-    "import/no-unassigned-import": "error",
-    "import/no-unresolved": "error",
-    "import/no-webpack-loader-syntax": "error",
-    "import/order": "error",
-    "import/prefer-default-export": "error",
-    "import/unambiguous": "error",
     "indent": ["error", 2, {"SwitchCase": 1}],
     "init-declarations": "error",
     "key-spacing": "error",
