@@ -5,7 +5,7 @@ import {omit} from "ramda"
 import * as authenticate from "./authenticate"
 
 export default function request ({method, href, mediatype}: RequestMetadataType): Function {
-  return function requestWithMetadata (configuration: RequestConfigurationType): Promise<JSONAPIRootType> {
+  return function requestWithMetadata (configuration: RequestConfigurationType = {}): Promise<JSONAPIRootType> {
     const {payload} = configuration
     const {authentication} = configuration
     const url = urlTemplate.parse(href).expand(omit(["authentication", "payload"], configuration))

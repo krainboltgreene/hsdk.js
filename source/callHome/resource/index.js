@@ -1,12 +1,17 @@
 import abstraction from "abstraction"
 import {propSatisfies} from "ramda"
 import {prop} from "ramda"
+import {path} from "ramda"
 import isPresent from "@unction/ispresent"
 import isPopulated from "@unction/ispopulated"
 import isType from "@unction/istype"
 
 import request from "./request"
 import resourceAttributes from "./resourceAttributes"
+
+const method = path(["attributes", "method"])
+const href = path(["attributes", "href"])
+const mediatype = path(["attributes", "mediatype"])
 
 export default abstraction({
   attributes: {
@@ -19,9 +24,9 @@ export default abstraction({
     request: {
       source (data: any): Promise<any> {
         return request({
-          method: data.attributes.method,
-          href: data.attributes.href,
-          mediatype: data.attributes.mediatype,
+          method: method(data),
+          href: href(data),
+          mediatype: mediatype(data),
         })
       },
     },
