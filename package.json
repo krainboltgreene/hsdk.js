@@ -58,7 +58,7 @@
     "@unction/resolvep": "1.0.3",
     "@unction/treeify": "1.0.8",
     "abstraction": "10.3.0",
-    "axios": "0.16.1",
+    "axios": "0.16.2",
     "httpstatuses": "3.0.0",
     "ramda": "0.23.0",
     "url-template": "2.0.8"
