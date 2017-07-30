@@ -53,7 +53,7 @@
     "@unction/ispopulated": "2.0.1",
     "@unction/ispresent": "1.1.2",
     "@unction/istype": "1.0.1",
-    "@unction/mapvalues": "1.0.3",
+    "@unction/mapvalues": "2.0.4",
     "@unction/resolvep": "1.0.3",
     "@unction/treeify": "1.0.9",
     "abstraction": "10.3.0",
