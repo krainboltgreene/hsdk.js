@@ -39,16 +39,16 @@ const http = ({url}) => {
   }
 }
 
-// test("hsdk be a function", () => expect(typeof subject).toBe("function"))
-// test("hsdk return a promise", () => expect(subject({home: {}, http: () => resolveP(body), receive: key("data")}).constructor).toBe(Promise))
-// test("client must be an function", () => {
-//   expect.assertions(1)
-//   subject({home: {}, http: () => resolveP(body), receive: key("data")}).then((client) => expect(typeof client).toBe("function"))
-// })
-// test("client must be an function", () => {
-//   expect.assertions(1)
-//   subject({home: {}, http: () => resolveP(body), receive: key("data")}).then((client) => expect(typeof client.accounts.v1.show).toBe("function"))
-// })
+test("hsdk be a function", () => expect(typeof subject).toBe("function"))
+test("hsdk return a promise", () => expect(subject({home: {}, http: () => resolveP(body), receive: key("data")}).constructor).toBe(Promise))
+test("client must be an function", () => {
+  expect.assertions(1)
+  subject({home: {}, http: () => resolveP(body), receive: key("data")}).then((client) => expect(typeof client).toBe("function"))
+})
+test("client must be an function", () => {
+  expect.assertions(1)
+  subject({home: {}, http: () => resolveP(body), receive: key("data")}).then((client) => expect(typeof client.accounts.v1.show).toBe("function"))
+})
 
 test("it works", () => {
   expect.assertions(1)

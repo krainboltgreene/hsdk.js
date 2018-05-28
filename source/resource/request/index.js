@@ -8,7 +8,7 @@ import type {UnaryFunctionType} from "types"
 import type {RequestConfigurationType} from "types"
 import type {JSONAPIRootType} from "types"
 
-export default function request (metadata: RequestMetadataType): UnaryFunctionType {
+export default function request (metadata: RequestMetadataType): UnaryFunctionType<*, *> {
   const {method} = metadata
   const {href} = metadata
   const {mediatype} = metadata

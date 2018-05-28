@@ -1,4 +1,3 @@
-import catchP from "@unction/catchp"
 import thenP from "@unction/thenp"
 import pipe from "@unction/pipe"
 import get from "@unction/get"
@@ -20,7 +19,6 @@ export default function hsdk ({home, http, receive}: {home: HomeType, http: HTTP
     thenP(mapValues(resource(http))),
     thenP(mapTree),
     thenP(objectTree),
-    catchP(console.error.bind(console)),
   ])(
     http(home),
   )

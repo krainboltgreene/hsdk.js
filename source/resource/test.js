@@ -11,7 +11,6 @@ test("resouce", () => {
       namespace: "accounts",
       description: "test",
       href: "https://api.example.com/v1/accounts",
-      allowed: [],
       mediatype: "application/vnd.api+json",
     },
   })).toMatchObject({
@@ -24,7 +23,6 @@ test("resouce", () => {
       namespace: "accounts",
       description: "test",
       href: "https://api.example.com/v1/accounts",
-      allowed: [],
       mediatype: "application/vnd.api+json",
     },
   })

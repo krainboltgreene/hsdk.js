@@ -24,27 +24,17 @@
   "files": [
     "transpiled/"
   ],
-  "nyc": {
-    "require": [
-      "babel-register"
-    ],
-    "sourceMap": false,
-    "instrument": false,
-    "exclude": [
-      "source/**/test.js",
-      "types/"
-    ]
-  },
   "scripts": {
     "prepublishOnly": "npm run build",
     "test": "NODE_ENV=test jest 'source/.+/test.js'",
     "build": "rm -rf './transpiled' && babel --ignore='./**/test.js' './source/' -d './transpiled/'",
-    "lint": "eslint './source/'",
+    "lint": "eslint './source/**/index.js'",
     "check": "flow check",
-    "ci": "npm run test && npm run lint && npm run check",
+    "ci": "npm run test",
     "watch": "chokidar './source/' --command 'npm run ci --silent'"
   },
   "devDependencies": {
+    "@unction/resolvep": "3.0.0",
     "babel-cli": "6.26.0",
     "babel-core": "6.26.3",
     "babel-eslint": "8.2.3",
@@ -68,12 +58,9 @@
     "jest": "23.0.0"
   },
   "dependencies": {
-    "@unction/catchp": "3.0.0",
     "@unction/dig": "1.0.1",
-    "@unction/flip": "3.0.0",
     "@unction/get": "1.0.0",
     "@unction/groupby": "9.0.0",
-    "@unction/hammer": "15.0.0",
     "@unction/indexby": "9.0.0",
     "@unction/ispopulated": "13.0.0",
     "@unction/ispresent": "3.0.0",
@@ -85,8 +72,6 @@
     "@unction/objectfrom": "1.0.0",
     "@unction/onlykeys": "1.0.0",
     "@unction/pipe": "9.0.0",
-    "@unction/resolvep": "3.0.0",
-    "@unction/split": "12.0.0",
     "@unction/thenp": "3.0.0",
     "@unction/treeify": "12.0.0",
     "@unction/where": "9.0.0",
