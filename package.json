@@ -1,6 +1,6 @@
 {
   "name": "hsdk",
-  "version": "11.0.0",
+  "version": "11.0.1",
   "description": "A hypermedia standard development kit for knowing about home api endpoints",
   "keywords": [
     "http",
