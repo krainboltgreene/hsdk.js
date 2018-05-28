@@ -1,1 +1,0 @@
-type JSONAPIIncludedType = Array<JSONAPIResourceType>

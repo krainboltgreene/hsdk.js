@@ -1,1 +1,0 @@
-type AuthenticationType = BasicAuthenticationType | BearerAuthenticationType

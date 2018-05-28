@@ -1,11 +1,27 @@
-import axios from "axios"
-import resolveP from "@unction/resolvep"
-import callHome from "./callHome"
+import catchP from "@unction/catchp"
+import thenP from "@unction/thenp"
+import pipe from "@unction/pipe"
+import get from "@unction/get"
+import mapValues from "@unction/mapvalues"
 
-export default function hsdk (home: HomeType, mocks?: MockType): Promise<SDKType> {
-  if (mocks) {
-    return callHome(resolveP(mocks))
-  }
+import resource from "./resource"
+import mapTree from "./mapTree"
+import objectTree from "./objectTree"
 
-  return callHome(axios(home))
+import type {SDKType} from "types"
+import type {HomeType} from "types"
+import type {HTTPClientType} from "types"
+import type {ReceiveType} from "types"
+
+export default function hsdk ({home, http, receive}: {home: HomeType, http: HTTPClientType, receive: ReceiveType}): Promise<SDKType> {
+  return pipe([
+    thenP(receive),
+    thenP(get("data")),
+    thenP(mapValues(resource(http))),
+    thenP(mapTree),
+    thenP(objectTree),
+    catchP(console.error.bind(console)),
+  ])(
+    http(home),
+  )
 }

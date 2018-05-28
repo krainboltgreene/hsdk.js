@@ -2,19 +2,6 @@
   "name": "hsdk",
   "version": "10.0.0",
   "description": "A hypermedia standard development kit for knowing about home api endpoints",
-  "main": "transpiled/source/index.js",
-  "scripts": {
-    "prepublish": "npm run build",
-    "build": "babel './source/**/*.js' -d './transpiled/'",
-    "pretest": "npm run build",
-    "test": "tap './transpiled/**/test.js'",
-    "lint": "eslint './source/'",
-    "check": "flow check"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/krainboltgreene/hsdk.js.git"
-  },
   "keywords": [
     "http",
     "api",
@@ -22,42 +9,89 @@
     "hsdk",
     "hateoas"
   ],
-  "author": "Kurtis Rainbolt-Greene <me@kurtisrainboltgreene.name>",
+  "contributors": [
+    {
+      "name": "Kurtis Rainbolt-Greene",
+      "email": "kurtis@rainbolt-greene.online",
+      "url": "https://kurtis.rainbolt-greene.online"
+    }
+  ],
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/krainboltgreene/hsdk.js/issues"
+  "homepage": "https://github.com/krainboltgreene/cycle-channel#readme",
+  "repository": "github:krainboltgreene/cycle-channel",
+  "bugs": "https://github.com/krainboltgreene/cycle-channel/issues",
+  "main": "transpiled/index.js",
+  "files": [
+    "transpiled/"
+  ],
+  "nyc": {
+    "require": [
+      "babel-register"
+    ],
+    "sourceMap": false,
+    "instrument": false,
+    "exclude": [
+      "source/**/test.js",
+      "types/"
+    ]
   },
-  "homepage": "https://github.com/krainboltgreene/hsdk.js#readme",
+  "scripts": {
+    "prepublishOnly": "npm run build",
+    "test": "NODE_ENV=test jest 'source/.+/test.js'",
+    "build": "rm -rf './transpiled' && babel --ignore='./**/test.js' './source/' -d './transpiled/'",
+    "lint": "eslint './source/'",
+    "check": "flow check",
+    "ci": "npm run test && npm run lint && npm run check",
+    "watch": "chokidar './source/' --command 'npm run ci --silent'"
+  },
   "devDependencies": {
     "babel-cli": "6.26.0",
-    "babel-core": "6.26.0",
-    "babel-eslint": "8.0.3",
+    "babel-core": "6.26.3",
+    "babel-eslint": "8.2.3",
+    "babel-jest": "23.0.0",
+    "babel-plugin-flow-runtime": "0.17.0",
+    "babel-plugin-module-resolver": "3.1.1",
     "babel-plugin-transform-object-rest-spread": "6.26.0",
-    "babel-preset-env": "1.6.1",
+    "babel-preset-env": "1.7.0",
     "babel-preset-flow": "6.23.0",
-    "eslint": "4.12.1",
-    "eslint-plugin-babel": "4.1.2",
-    "eslint-plugin-flowtype": "2.39.1",
+    "chokidar-cli": "1.2.0",
+    "eslint": "4.19.1",
+    "eslint-import-resolver-babel-module": "4.0.0",
+    "eslint-plugin-babel": "5.1.0",
+    "eslint-plugin-flowtype": "2.46.3",
     "eslint-plugin-immutable": "1.0.0",
-    "eslint-plugin-import": "2.8.0",
-    "eslint-plugin-node": "5.2.1",
-    "eslint-plugin-promise": "3.6.0",
+    "eslint-plugin-import": "2.12.0",
+    "eslint-plugin-promise": "3.7.0",
     "flow": "0.2.3",
-    "flow-bin": "0.60.1",
-    "flow-typed": "2.2.3",
-    "tap": "11.0.0",
-    "npm-run-all": "4.1.2"
+    "flow-bin": "0.72.0",
+    "flow-typed": "2.4.0",
+    "jest": "23.0.0"
   },
   "dependencies": {
-    "@unction/hammer": "4.61.0",
-    "@unction/ispopulated": "4.49.0",
-    "@unction/ispresent": "2.8.0",
-    "@unction/istype": "2.12.0",
-    "@unction/mapvalues": "3.46.0",
-    "@unction/resolvep": "2.8.0",
-    "@unction/treeify": "3.64.0",
+    "@unction/catchp": "3.0.0",
+    "@unction/dig": "1.0.1",
+    "@unction/flip": "3.0.0",
+    "@unction/get": "1.0.0",
+    "@unction/groupby": "9.0.0",
+    "@unction/hammer": "15.0.0",
+    "@unction/indexby": "9.0.0",
+    "@unction/ispopulated": "13.0.0",
+    "@unction/ispresent": "3.0.0",
+    "@unction/istype": "4.0.0",
+    "@unction/keychaintree": "1.0.0",
+    "@unction/mapvalues": "9.0.0",
+    "@unction/mergeallright": "9.0.0",
+    "@unction/mergeright": "6.0.0",
+    "@unction/objectfrom": "1.0.0",
+    "@unction/onlykeys": "1.0.0",
+    "@unction/pipe": "9.0.0",
+    "@unction/resolvep": "3.0.0",
+    "@unction/split": "12.0.0",
+    "@unction/thenp": "3.0.0",
+    "@unction/treeify": "12.0.0",
+    "@unction/where": "9.0.0",
     "abstraction": "11.0.0",
-    "axios": "0.17.1",
+    "btoa": "1.2.1",
     "httpstatuses": "3.0.0",
     "ramda": "0.25.0",
     "url-template": "2.0.8"

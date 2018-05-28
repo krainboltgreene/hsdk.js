@@ -1,3 +1,0 @@
-type ResponseType = {
-  data?: Object,
-}

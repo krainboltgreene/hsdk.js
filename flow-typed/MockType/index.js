@@ -1,3 +1,0 @@
-type MockType = {
-  data: JSONAPIRootType
-}

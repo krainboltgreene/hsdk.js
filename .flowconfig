@@ -1,13 +1,17 @@
 [ignore]
 .*/node_modules/.*
-.*/\.git/.*
-<PROJECT_ROOT>/transpiled/.*
+.*/transpiled/.*
+.*/coverage/.*
+.*/.nyc_output/.*
+.*/test.js
+.*/example/.*
 
 [include]
 ./source/
 
 [libs]
-flow-typed
+flow-typed/
 
 [options]
 all=true
+module.name_mapper='^types$' ->'<PROJECT_ROOT>/types'
