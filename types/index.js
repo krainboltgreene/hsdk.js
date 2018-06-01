@@ -54,7 +54,6 @@ export type JSONAPIRootType = {
   meta?: Object,
   included?: JSONAPIIncludedType,
 }
-export type ReceiveType = (AxoisResponseType) => JSONAPIRootType
 export type RequestConfigurationType = {
   payload?: Object,
   authentication?: AuthenticationType,
@@ -90,6 +89,7 @@ export type ResourceType = {
 export type AxoisResponseType = {
   data?: Object,
 }
+export type ReceiveType = (AxoisResponseType) => JSONAPIRootType
 export type SDKType = {
   [namespace: string]: {
     [version: string]: {
@@ -97,4 +97,4 @@ export type SDKType = {
     }
   }
 }
-type UnaryFunctionType<I: mixed, O: mixed> = (I) => O
+export type UnaryFunctionType<I: mixed, O: mixed> = (I) => O

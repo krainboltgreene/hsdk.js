@@ -32,7 +32,7 @@ const sdk = hsdk({
     responseType: "JSON",
   }),
   // You tell us how to get to the JSON:API data
-  receive((body) => body.data),
+  receive: (body) => body.data,
 })
 ```
 

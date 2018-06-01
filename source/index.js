@@ -4,8 +4,7 @@ import get from "@unction/get"
 import mapValues from "@unction/mapvalues"
 
 import resource from "./resource"
-import mapTree from "./mapTree"
-import objectTree from "./objectTree"
+import clientTree from "./clientTree"
 
 import type {SDKType} from "types"
 import type {HomeType} from "types"
@@ -17,8 +16,7 @@ export default function hsdk ({home, http, receive}: {home: HomeType, http: HTTP
     thenP(receive),
     thenP(get("data")),
     thenP(mapValues(resource(http))),
-    thenP(mapTree),
-    thenP(objectTree),
+    thenP(clientTree),
   ])(
     http(home),
   )

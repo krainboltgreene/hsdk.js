@@ -10,7 +10,10 @@ import onlyKeys from "@unction/onlykeys"
 
 import request from "./request"
 
-export default function resource (http: HTTPClientType): RequestType {
+import type {HTTPClientType} from "types"
+import type {ResourceType} from "types"
+
+export default function resource (http: HTTPClientType): ResourceType {
   return abstraction({
     attributes: {
       id: {source: get("id")},
@@ -23,6 +26,7 @@ export default function resource (http: HTTPClientType): RequestType {
             namespace: {source: get("namespace")},
             version: {source: get("version")},
             description: {source: get("description")},
+            deprecated: {source: get("deprecated")},
             method: {source: get("method")},
             href: {source: get("href")},
             mediatype: {source: get("mediatype")},
