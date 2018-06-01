@@ -15,7 +15,7 @@ First you need to define your core sdk and in this example we'll our jsonapi.org
 
 ``` javascript
 import hsdk from "hsdk"
-import axois from "axois"
+import axios from "axios"
 
 const sdk = hsdk({
   home: {
@@ -25,7 +25,7 @@ const sdk = hsdk({
     },
   },
   // You tell us how to make the request
-  http: ({url, method, payload}) => axois({
+  http: ({url, method, payload}) => axios({
     method,
     url,
     data: payload,
